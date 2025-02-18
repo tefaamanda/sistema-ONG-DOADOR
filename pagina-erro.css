@@ -1,0 +1,19 @@
+* {
+    font-family: Poppins, serif;
+}
+
+.parte-principal {
+    background-color:#082C5B;
+    margin: 0;
+    padding:40px;
+}
+
+.container-texto {
+    color: white;
+
+}
+
+.container-botao {
+    margin-top: 10px;
+
+}
