@@ -11,6 +11,10 @@
     --cinza: #898989;
 }
 
+body {
+    overflow-x: hidden;
+  }
+
 /* CABEÇALHO */
 header {
     background-color: var(--branco);
@@ -111,19 +115,21 @@ header {
 .parte-principal {
     background-color:#082C5B;
     margin: 0;
-    padding:40px;
+    padding:0;
+    width: 100vw;
 }
 
 .container-texto {
     color: white;
     margin: 0;
-    padding:0;
+    padding:40px;
 }
 
 .container-botao {
     margin-top: 20px;
-    padding-left: 10px;
-    padding-top: 15px;
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-bottom: 40px;
 }
 .btn-voltar {
     background-color: #F37500;
@@ -142,53 +148,12 @@ header {
 }
 
 @media (max-width:1099px) {
-    .text-nav {
-        gap: 20px;
-        text-decoration: none;
-        padding-left: 10px;
-        display: flex;
-        flex-wrap: wrap;}
     .doe-agora {
         margin-left: 20px;
         margin-right: 20px;
         padding: 10px;
     }
 }
-
-.navbar {
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
-  
-
-  .menu-toggle {
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    display: none; 
-  }
-  
-
-  .text-nav {
-    display: flex;
-    gap: 20px;
-    text-decoration: none;
-    padding-left: 50px;
-    align-items: center;
-    font-family: 'Microsoft JhengHei UI', sans-serif;
-    color: #000;
-  }
-  
-  .text-nav a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .text-nav a:hover {
-    color: var(--laranja);
-  }
   
   @media (max-width: 768px) {
     .menu {
@@ -233,5 +198,18 @@ header {
     
       .menu-toggle {
         display: block;
+      }
+}
+
+@media (max-width:420px) {
+    .parte-principal {
+        width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+      }
+    
+      .doe-agora {
+        max-width: 100%;
+        white-space: nowrap;
       }
 }
