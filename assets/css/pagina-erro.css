@@ -255,3 +255,9 @@ footer {
         white-space: nowrap;
       }
 }
+@media (max-width: 376px) {
+  .re {
+    display:flex;
+    justify-content:space-between;
+  }
+}
