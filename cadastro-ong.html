@@ -12,7 +12,7 @@
 </head>
 <body>
     <header class="d-flex pt-3 align-items-center justify-content-center">
-        <img class="logo" src="assets/img/logo.png" alt="Logo da fundação 'Doe Aí'.">
+        <img class="logo1" src="assets/img/logo.png" alt="Logo da fundação 'Doe Aí'.">
         <div class="group">
             <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
             <g>
@@ -36,29 +36,6 @@
                 </a>
             </div>
         </nav>
-        <nav>
-            <div>
-                <a href="" class="text-nav">
-                    QUEM SOMOS
-                </a>
-            </div>
-        </nav>
-        <nav>
-            <div>
-                <a href="login-ong.html" class="text-nav">
-                    SOU UMA ONG
-                </a>
-            </div>
-        </nav>
-        <nav>
-            <div>
-                <a href="">
-                    <button class="doe-agora">
-                        DOE AGORA
-                    </button>
-                </a>
-            </div>
-        </nav>
     </header>
 
     <main>
@@ -66,7 +43,7 @@
 
             <div class="row">
 
-                <div class="col-6">
+                <div class="col-sm-6 centralizar-conteudo">
                     <h1>Olá, ONG! Faça seu cadastro aqui!</h1>
                     <div class="div-branca">
                         <input type="email" placeholder="E-mail">
@@ -75,19 +52,26 @@
                     </div>
                 </div>  
 
-                <div class="col-6">
+                <div class="col-sm-6">
                     <div class="div-branca">
                         <input type="text" placeholder="Nome da ONG">
                         <input type="text" placeholder="CNPJ">
                         <input type="text" placeholder="Categoria">
                         <input type="text" placeholder="Descrição da causa">
-                        <input type="text" placeholder="CEP">
-                        <input type="text" placeholder="Chave pix">
-                        <input type="text" placeholder="N° da agência">
-                        <input type="text" placeholder="N° da conta">
+
+                        <div class="input-group">
+                            <input type="text" class="arredondar" placeholder="CEP">
+                            <input type="text" class="arredondar" placeholder="Chave pix">
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" class="arredondar" placeholder="N° da agência">
+                            <input type="text" class="arredondar" placeholder="N° da conta">
+                        </div>
+
                         <input type="text" placeholder="Nome do banco">
                     </div>
-                    <button>ENVIAR</button>
+                    <button class="botao-direita">ENVIAR</button>
                 </div>
 
             </div>
@@ -100,22 +84,22 @@
             <div class="row">
 
                 <div class="col-md-3 text-center">
-                    <img class="logo tam" src="assets/img/logo.png" alt="Logo da fundação 'Doe Aí'.">
+                    <img class="logo2 tam" src="assets/img/logo.png" alt="Logo da fundação 'Doe Aí'.">
                 </div>
 
-                <div class="col-md-2 text-center">
-                    <h5 class="pb-2">TELEFONE</h5>
+                <div class="col-md-2 col-6 text-center margin">
+                    <h5 class="pb-2 tam2">TELEFONE</h5>
                     <h6>(18) 99120-3762</h6>
                 </div>
 
-                <div class="col-md-2 text-center">
-                    <h5 class="pb-2">SOBRE NÓS</h5>
+                <div class="col-md-2 col-6 text-center margin">
+                    <h5 class="pb-2 tam2">SOBRE NÓS</h5>
                     <h6>• ONGs</h6>
                     <h6 class="p-t">• Doações</h6>
                 </div>
 
                 <div class="col-md-5 text-center">
-                    <h5 class="pb-2">NOS ACOMPANHE</h5>
+                    <h5 class="pb-2 tam2">NOS ACOMPANHE</h5>
                     <div class="space">
                         <img class="imgfooter" src="assets/img/facebook.png" alt="Logo do Facebook.">
                         <img class="imgfooter" src="assets/img/instagram.png" alt="Logo do Instagram.">
@@ -125,11 +109,22 @@
                 </div>
 
                 <div class="col-md-12 azul text-center">
-                    <h5>© 2025. Todos os direitos reservados.</h5>
+                    <h5 class="tam3">© 2025. Todos os direitos reservados.</h5>
                 </div>
 
             </div>
         </div>
     </footer>
 </body>
+
+<script>
+    let input = document.querySelector("#query")
+    input.addEventListener("focus", function () {
+        input.placeholder = "Busque por ONGs, vagas e endereços."
+    })
+
+    input.addEventListener("focusout", function () {
+        input.placeholder = "Busque por ONGs, vagas e endereços."
+    })
+</script>
 </html>
