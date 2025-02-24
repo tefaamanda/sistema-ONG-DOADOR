@@ -255,9 +255,15 @@ footer {
         white-space: nowrap;
       }
 }
-@media (max-width: 376px) {
-  .re {
-    display:flex;
-    justify-content:space-between;
-  }
+@media (max-width: 374px) {
+
+  .doe-agora {
+      max-width: 100%;
+      white-space: nowrap;
+    }
+    .parte-principal {
+      width: 100vw;
+      overflow-x: hidden;
+      box-sizing: border-box;
+    } 
 }
