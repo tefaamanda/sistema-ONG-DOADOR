@@ -288,3 +288,169 @@ footer {
 }
 
 /* Fim - Rodapé */
+
+/* RESPONSIVO */
+
+@media (max-width: 426px) {
+    /* 🔹 Ajuste do cabeçalho */
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    main {
+        background-image: url(../img/fundo-log.png); /* Certifique-se de que o caminho está correto */
+        background-repeat: no-repeat;
+        background-size: cover; /* Garante que a imagem cobre toda a área */
+        background-position: center; /* Centraliza a imagem */
+    }
+
+    .logo {
+        width: 120px;
+        margin: 0 auto;
+        padding: 10px 0;
+    }
+    .input::placeholder {
+        color: var(--cinza);
+        padding-left: 1.5rem;
+    }
+    .group {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .text-nav {
+        font-size: 14px;
+        padding-left: 40px;
+    }
+
+    .doe-agora {
+        font-size: 12px;
+        padding: 8px;
+    }
+    footer .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .col-md-3, .col-md-2, .col-md-5 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .space {
+        justify-content: center;
+    }
+
+    .imgfooter {
+        width: 30px;
+    }
+
+    .azul h5 {
+        font-size: 12px;
+    }
+    .azul {
+        background-color: var(--azul);
+        color: var(--branco);
+        padding: 10px;
+        margin-top: 20px; /* Aumenta o espaço entre as redes sociais e o texto © 2025 */
+    }
+    .banner {
+        width: 100%;
+        margin: 0;
+        height: 200px;
+        background-image: url("assets/img/doadorfundo.jpg");
+        background-size: cover;
+        background-position: center;
+        position: relative; /* Contêiner relativo */
+        display: inline-block;
+    }
+    
+    
+    .banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        display: block;/* Ajusta a imagem para cobrir o espaço sem distorcer */
+    }
+    
+    .banner h1 {
+        position: absolute; /* Texto absoluto em relação ao contêiner */
+        top: 30px; /* Ajuste a posição vertical */
+        left: 30px; /* Ajuste a posição horizontal */
+        color: white; 
+        justify-content: center;/* Cor do texto */
+    
+    }
+    .banner p {
+        position: absolute; /* Texto absoluto em relação ao contêiner */
+        top: 80px; /* Ajuste a posição vertical */
+        left: 30px; /* Ajuste a posição horizontal */
+        font-size: 18px;
+        color: white; /* Cor do texto */
+    }
+    main {
+        font-family: Arial, sans-serif;
+        background-color: #d9d9d9;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        height:auto;
+        margin: 0;
+    }
+    input {
+        width: 150px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background: #ddd;
+        cursor: not-allowed;
+    }
+
+    .edit-btn {
+        background: #008cff;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        align-items: center;
+        gap: 5px;
+    }
+
+    .edit-btn:hover {
+        color: #0e0060;
+    }
+
+    .delete-btn {
+        background: #ff6600;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .delete-btn:hover {
+        background: #cc5200;
+    }
+
+    .save-btn {
+        background: #00c638;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .save-btn:hover {
+        background: #00451a;
+    }
+}

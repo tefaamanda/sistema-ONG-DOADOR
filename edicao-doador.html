@@ -10,6 +10,54 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        $("#formCadastroUsuario").on("submit", function(e) {
+
+            // Faz com que não atualiza a página
+            e.preventDefault();
+
+            // Captura tudo o que o usuario preencheu 
+            let dados = new FormData(this);
+
+            // Repassa os dados para OBJETO
+            let envia = {
+                nome: dados.get("nome"),
+                e_mail: dados.get("e_mail"),
+                senha: dados.get("senha"),
+                tipo_usuario: 3
+            }
+
+            // Transforma o Objeto JSON em um STRING
+            envia = JSON.stringify(envia)
+
+            // Envia as informações para a API
+            $.ajax({
+                // Metodo HTTP da API
+                method: "post", 
+
+                // URL da API
+                url: "http://192.168.1.126:5000/user",
+
+                // Envia os dados do formulario
+                data: envia,
+
+                // Informa que deve ser retornado um JSON
+                contentType: "application/json",
+
+                // Metodo executado quando da certo a requisição
+                success: function(retorno) {
+                    alert("DEU CERTO!!!")
+                    console.log(retorno)
+                },
+
+                // Caso de algum erro executa essa função
+                error: function(retorno) {
+                    alert("DEU RUIM")
+                    console.log(retorno)
+                }
+            })
+        })
+    </script>
 </head>
 <body>
     <header class="d-flex pt-3 align-items-center justify-content-center">
@@ -39,7 +87,7 @@
         </nav>
     </header>
         <div class="banner">
-''           <img src="assets/img/doadorfundo.png" alt="Banner informativo">
+                 <img src="assets/img/doadorfundo.png" alt="Banner informativo">
             <h1> Olá, doador!</h1>
             <p> Bem vindo(a) ao seu painel de doador do Doe Aí!</p>
         </div>
@@ -48,10 +96,10 @@
         <form>
             <div class="container">
                 <h2>Meu perfil</h2>
-                <form>
+                <form action = "" id="formCadastroUsuario">
                     <div class="form-group">
-                        <label>Nome completo</label>
-                        <input type="text" value="nome">
+                        <label>Nome</label>
+                        <input type="text" value= "nome">
                     </div>
         
                     <div class="form-group">
