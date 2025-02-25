@@ -17,20 +17,25 @@ header {
     background-color: var(--branco);
     box-shadow: #2f303d25 2px 6px 5px;
     padding-bottom: 10px;
+    gap: 50px;
 }
 
-.logo {
+.logo1 {
     padding-top: 10px;
     padding-right: 30px;
+    width: 240px;
+    margin-left: -60px;
+    padding-left: 50px;
 }
 
 .text-nav {
     gap: 20px;
     text-decoration: none;
-    padding-left: 50px;
+    padding-left: 270px;
     align-items: center;
     font-family: 'Microsoft JhengHei UI', sans-serif;
     color: #000;
+    font-size: 15px;
 }
 
 .text-nav:hover {
@@ -38,6 +43,7 @@ header {
 }
 
 .doe-agora {
+    font-size: 15px;
     gap: 20px;
     text-decoration: none;
     margin-left: 50px;
@@ -64,12 +70,13 @@ header {
     align-items: center;
     position: relative;
     max-width: 580px;
+    margin-left: 10px;
 }
   
 .input {
     font-family: 'Microsoft JhengHei UI', sans-serif;
     width: 100%;
-    height: 45px;
+    height: 30px;
     padding-left: 2.5rem;
     box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
     border: 0;
@@ -77,13 +84,13 @@ header {
     background-color: var(--branco);
     outline: none;
     color: var(--cinza);
-    transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
     cursor: text;
     z-index: 0;
 }
   
 .input::placeholder {
     color: var(--cinza);
+    padding-left: 0.5rem;
 }
   
 .input:hover {
@@ -96,8 +103,10 @@ header {
   
 .input:focus {
     box-shadow: 0 0 0 2.5px #2f303d;
+    width: 400px !important;
+    border: none;
 }
-  
+
 .search-icon {
     position: absolute;
     left: 1rem;
@@ -107,7 +116,6 @@ header {
     pointer-events: none;
     z-index: 1;
 }
-
 /* Fim - Cabeçalho */
 
 body {
@@ -236,9 +244,9 @@ footer {
     }
 
     main h1 {
-        font-size: 40px;
+        font-size: 30px;
         line-height: 50px;
-        margin-left: -40px;
+        justify-content: center;
         padding-bottom: 20px;
     }
 
@@ -291,7 +299,15 @@ footer {
         display: flex;
 
     }
-
+    .text-nav {
+        gap: 20px;
+        text-decoration: none;
+        padding-left: 270px;
+        align-items: center;
+        font-family: 'Microsoft JhengHei UI', sans-serif;
+        color: #000;
+        font-size: 15px;
+    }
         
     header nav {
         display: flex;
@@ -316,7 +332,7 @@ footer {
         margin-bottom: 20px;
     } 
     .col-7 h1 {
-        font-size: 25px;
+        font-size: 20px;
         margin-left: 0;
     }
 
@@ -326,6 +342,10 @@ footer {
     .col-3 button {
         margin-left: -100px;
     }
+    .input::placeholder {
+    color: var(--cinza);
+    padding-left: 0.5rem;
+}
 }
 
 @media (max-width:770px) { 
@@ -352,6 +372,12 @@ footer {
       .menu-toggle { 
         display: block; 
       } 
+
+    .input::placeholder {
+        color: var(--cinza);
+        padding-left: 1.5rem;
+    }
+      
 }
 
 @media (max-width:1099px) { 
@@ -364,5 +390,8 @@ footer {
         padding-left: 10px; 
         display: flex; 
         flex-wrap: wrap;} 
-
+.input::placeholder {
+        color: var(--cinza);
+        padding-left: 1.5rem;
+    }
 } 
