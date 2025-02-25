@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form action="" id="formCadastroUsuario">
+        <select name="tipo">
+            <option selected disabled>Selecione seu tipo</option>
+            <option value="3">Doador</option>
+            <option value="2">ONG</option>
+        </select>
+        <input placeholder="Nome" type="text" name="nome">
+        <input placeholder="Email" type="email" name="e_mail">
+        <input placeholder="Senha" type="password" name="senha">
+        <input placeholder="CNPJ" type="number" name="cnjp">
+        <input placeholder="Categoria" type="text" name="categoria">
+        <input placeholder="Descrição da causa" type="text" name="descricao_da_causa">
+        <input placeholder="CEP" type="number" name="cep">
+        <input placeholder="Chave pix" type="number" name="chave_pix">
+        <input placeholder="Nº da agência" type="number" name="num_agencia">
+        <input placeholder="Nº da conta" type="number" name="num_conta">
+        <input placeholder="Nome do Banco" type="text" name="nome_banco">
+        <!-- <input type="hidden" name="tipo" value="3"> -->
+        <button type="submit">Enviar</button>
+    </form>
+
+    <form action="" id="formLoginUsuario">
+        <input placeholder="Email" type="email" name="e_mail">
+        <input placeholder="Senha" type="password" name="senha">
+        <!-- <input type="hidden" name="tipo" value="3"> -->
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        $("#formCadastroUsuario").on("submit", function(e){
+            // Não atualiza a página
+            e.preventDefault();
+
+            // Captura o que o usuário preencheu
+            let dados = new FormData(this);
+
+            // Repassa os dados para OBJETO
+            let envia = {
+                nome: dados.get("nome"),
+                e_mail: dados.get("e_mail"),
+                senha: dados.get("senha"),
+                cnpj: dados.get("cnpj"),
+                categoria: dados.get("categoria"),
+                descricao_da_causa: dados.get("descricao_da_causa"),
+                cep: dados.get("cep"),
+                chave_pix: dados.get("chave_pix"),
+                num_agencia: dados.get("num_agencia"),
+                num_conta: dados.get("num_conta"),
+                nome_banco: dados.get("nome_banco"),
+                tipo: dados.get("tipo")
+            }
+
+            // Transforma o objeto JSON em um STRING
+            envia = JSON.stringify(envia)
+
+            $.ajax({
+                // Método
+                method: "POST",
+                // URL da API
+                url: "http://10.92.3.210:5000/cadastro",
+                 //Dados a ser cadastrados na API
+                data: envia,
+                // Informa que deve ser retornado um JSON
+                contentType: "application/json",
+                // Função sucesso
+                success: function(retorno){
+                    alert("SUCESSO")
+                    console.log(retorno)
+                },
+                // Função erro
+                error: function(retorno){
+                    alert("ERRO")
+                    console.log(retorno)
+                }
+            })
+
+        })
+
+        $("#formLoginUsuario").on("submit", function(e){
+            // Não atualiza a página
+            e.preventDefault();
+
+            // Captura o que o usuário preencheu
+            let dados = new FormData(this);
+
+            // Repassa os dados para OBJETO
+            let login = {
+                e_mail: dados.get("e_mail"),
+                senha: dados.get("senha"),
+                tipo: dados.get("tipo")
+            }
+
+            // Transforma o objeto JSON em um STRING
+            login = JSON.stringify(login)
+
+            $.ajax({
+                // Método
+                method: "POST",
+                // URL da API
+                url: "http://10.92.3.210:5000/login",
+                 //Dados a ser cadastrados na API
+                data: dados,
+                // Informa que deve ser retornado um JSON
+                contentType: "application/json",
+                // Função sucesso
+                success: function(retorno){
+                    alert("SUCESSO")
+                    console.log(retorno)
+                },
+                // Função erro
+                error: function(retorno){
+                    alert("ERRO")
+                    console.log(retorno)
+                }
+            })
+        })
+    </script>
+</body>
+</html>
