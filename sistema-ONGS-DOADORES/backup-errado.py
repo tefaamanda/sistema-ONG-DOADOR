@@ -82,6 +82,7 @@ def validar_senha(senha):
 
 @app.route('/cadastro', methods=['POST'])
 def cadastro_post():
+    tipo_usuario = request.args.get('tipo', type=int) # Essa linha utiliza 'request.args.get' para adquirir o valor do tipo armazenado no banco de dados, vimos sobre esse código no site: https://stackoverflow.com/questions/34671217/in-flask-what-is-request-args-and-how-is-it-used
     data = request.get_json()
     nome = data.get('nome')
     e_mail = data.get('e_mail')
@@ -94,7 +95,6 @@ def cadastro_post():
     num_agencia = data.get('num_agencia')
     num_conta = data.get('num_conta')
     nome_banco = data.get('nome_banco')
-    tipo_usuario = int(data.get('tipo'))
 
     if not validar_senha(senha):
         return jsonify('A sua senha precisa ter pelo menos 8 caracteres, uma letra maiúscula, uma letra minúscula, um número e um caractere especial.'), 401
@@ -143,10 +143,6 @@ def cadastro_post():
                 'num_conta': num_conta,
                 'nome_banco': nome_banco
             }
-        })
-    else:
-        return jsonify({
-            'message': "Tipo Selecionado Invalido!"
         })
 
 

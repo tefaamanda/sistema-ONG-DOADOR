@@ -7,6 +7,7 @@ from flask_bcrypt import generate_password_hash, check_password_hash
 
 from flask import request
 
+
 @app.route('/cadastro', methods=['GET'])
 def cadastro():
     tipo_usuario = request.args.get('tipo', type=int) # Essa linha utiliza 'request.args.get' para adquirir o valor do tipo armazenado no banco de dados, vimos sobre esse código no site: https://stackoverflow.com/questions/34671217/in-flask-what-is-request-args-and-how-is-it-used
@@ -82,6 +83,7 @@ def validar_senha(senha):
 
 @app.route('/cadastro', methods=['POST'])
 def cadastro_post():
+    tipo_usuario = request.args.get('tipo', type=int) # Essa linha utiliza 'request.args.get' para adquirir o valor do tipo armazenado no banco de dados, vimos sobre esse código no site: https://stackoverflow.com/questions/34671217/in-flask-what-is-request-args-and-how-is-it-used
     data = request.get_json()
     nome = data.get('nome')
     e_mail = data.get('e_mail')
@@ -94,10 +96,9 @@ def cadastro_post():
     num_agencia = data.get('num_agencia')
     num_conta = data.get('num_conta')
     nome_banco = data.get('nome_banco')
-    tipo_usuario = int(data.get('tipo'))
 
     if not validar_senha(senha):
-        return jsonify('A sua senha precisa ter pelo menos 8 caracteres, uma letra maiúscula, uma letra minúscula, um número e um caractere especial.'), 401
+        return jsonify('A sua senha precisa ter pelo menos 8 caracteres, uma letra maiúscula, uma letra minúscula, um número e um caractere especial.')
 
     cursor = con.cursor()
 
@@ -115,7 +116,7 @@ def cadastro_post():
         cursor.close()
 
         return jsonify({
-            'message': "Registro realizado com sucesso!",
+            'message': "Doador registrado com sucesso!",
             'usuario': {
                 'nome': nome,
                 'e_mail': e_mail,
@@ -129,7 +130,7 @@ def cadastro_post():
         con.commit()
         cursor.close()
         return jsonify({
-            'message': "Registro realizado com sucesso!",
+            'message': "ONG registrada com sucesso!",
             'usuario': {
                 'nome': nome,
                 'e_mail': e_mail,
@@ -144,10 +145,6 @@ def cadastro_post():
                 'nome_banco': nome_banco
             }
         })
-    else:
-        return jsonify({
-            'message': "Tipo Selecionado Invalido!"
-        })
 
 
 @app.route('/cadastro/<int:id>', methods=['PUT'])
@@ -156,9 +153,10 @@ def cadastro_put(id):
     cursor = con.cursor()
     cursor.execute("select id_usuario, nome, e_mail, senha, cnpj, categoria, descricao_da_causa, cep, chave_pix, num_agencia, num_conta, nome_banco, tipo from usuario WHERE id_usuario = ?", (id,))
     usuario = cursor.fetchone()
-
+    #doador_data = cursor.fetchone()
+    #ong_data = cursor.fetchone()
     tipo_usuario = usuario[12]
-    senha_armazenada = usuario[3]
+    senha_armazanada = usuario[3]
 
     if not usuario:
         cursor.close()
@@ -177,7 +175,7 @@ def cadastro_put(id):
         if cursor.fetchone():
             return jsonify({"error": "E-mail já cadastrado!"}), 400
 
-        if senha_armazenada != senha:
+        if senha_armazanada != senha:
             if not validar_senha(senha):
                 return jsonify(
                     'A sua senha precisa ter pelo menos 8 caracteres, uma letra maiúscula, uma letra minúscula, um número e um caractere especial.')
@@ -190,7 +188,7 @@ def cadastro_put(id):
         cursor.close()
 
         return jsonify({
-            'message': "Cadastro atualizado com sucesso!",
+            'message': "Cadastro do Doador atualizado com sucesso!",
             'usuario': {
                 'id_usuario': id,
                 'nome': nome,
@@ -220,7 +218,7 @@ def cadastro_put(id):
         if cursor.fetchone():
             return jsonify({"error": "E-mail já cadastrado!"}), 400
 
-        if senha_armazenada != senha:
+        if senha_armazanada != senha:
             if not validar_senha(senha):
                 return jsonify(
                     'A sua senha precisa ter pelo menos 8 caracteres, uma letra maiúscula, uma letra minúscula, um número e um caractere especial.')
@@ -233,7 +231,7 @@ def cadastro_put(id):
         cursor.close()
 
         return jsonify({
-            'message': "Cadastro atualizado com sucesso!",
+            'message': "Cadastro da ONG atualizado com sucesso!",
             'usuario': {
                 'id_usuario': id,
                 'nome': nome,
@@ -250,10 +248,9 @@ def cadastro_put(id):
             }
         })
     return jsonify({
-            'message': "Cadastro atualizado com sucesso!"})
+            'message': "Cadastr atualizado com sucesso!"})
 
-# NÃO FUNCIONAL (ENTRETANTO, TAMBÉM NÃO É IMPORTANTE)
-@app.route('/cadastro/<int:id>', methods=['DELETE'])
+@app.route('/cadastro_doador/<int:id>', methods=['DELETE'])
 def deletar_cadastro(id):
     tipo_usuario = request.args.get('tipo', type=int) # Essa linha utiliza 'request.args.get' para adquirir o valor do tipo armazenado no banco de dados, vimos sobre esse código no site: https://stackoverflow.com/questions/34671217/in-flask-what-is-request-args-and-how-is-it-used
     cursor = con.cursor()
@@ -262,14 +259,14 @@ def deletar_cadastro(id):
         cursor.execute("SELECT 1 FROM usuario WHERE ID_USUARIO = ?", (id,))
         if not cursor.fetchone():
             cursor.close()
-            return jsonify({"error": "Registro não encontrado."}), 404
+            return jsonify({"error": "Registro do Doador não encontrado."}), 404
 
         cursor.execute("DELETE FROM usuario WHERE ID_USUARIO = ?", (id,))
         con.commit()
         cursor.close()
 
         return jsonify({
-            'message': "Cadastro excluído com sucesso!",
+            'message': "Cadastro do Doador excluído com sucesso!",
             'id_usuario': id
         })
 
@@ -277,17 +274,16 @@ def deletar_cadastro(id):
         cursor.execute("SELECT 1 FROM usuario WHERE ID_USUARIO = ?", (id,))
         if not cursor.fetchone():
             cursor.close()
-            return jsonify({"error": "Registro não encontrado."}), 404
+            return jsonify({"error": "Registro da ONG não encontrado."}), 404
 
         cursor.execute("DELETE FROM usuario WHERE ID_USUARIO = ?", (id,))
         con.commit()
         cursor.close()
 
         return jsonify({
-            'message': "Cadastro excluído com sucesso!",
+            'message': "Cadastro da ONG excluído com sucesso!",
             'id_usuario': id
         })
-
 
 # LOGIN
 
@@ -315,11 +311,11 @@ def login():
         if check_password_hash(senha_hash, senha):
             if login_data[3] == 2:
                 return jsonify({
-                    'message': "Login feito com sucesso!"
+                    'message': "Login da ONG feito com sucesso!"
                 })
             if login_data[3] == 3:
                 return jsonify({
-                    'message': "Login feito com sucesso!"
+                    'message': "Login do doador feito com sucesso!"
                 })
             else:
                 return jsonify({
@@ -336,12 +332,12 @@ def login():
                 cursor.close()
 
                 return jsonify({
-                    'message': "Usuário Inativo!"
+                    'message': "Usuario inativo!"
                 })
 
         return jsonify({
                 'message': "Erro no login!"
             })
     return jsonify({
-        'message': "Usuário Inativo!"
+        'message': "Usuario INativo!"
     })
