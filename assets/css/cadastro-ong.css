@@ -275,6 +275,10 @@ footer {
     width: 30px;
 }
 
+.alt {
+    width: 35px;
+}
+
 /* Fim - Rodapé */
 
 @media (max-width: 426px) {
