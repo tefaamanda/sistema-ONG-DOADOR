@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         $("#formCadastroUsuario").on("submit", function(e) {
 
             // Faz com que não atualiza a página
@@ -149,7 +150,7 @@
                         </div>
                     </div>
         
-                    <button type="button" class="delete-btn">Excluir</button>
+                    <button type="button" class="delete-btn" id="btn">Excluir</button>
                 </form>
             </div>
         </div>
@@ -202,5 +203,13 @@
         this.classList.add("active-link");
     });
 });
+
+    $("#btn").on("click", function(){
+        Swal.fire({
+            title: "Você deseja excluir mesmo seu perfil?",
+            text: "Excluindo seu perfil, você será inativado e precisará realizar o cadastro novamente.",
+            icon: "warning"
+        });
+    })
 </script>
 </html>
