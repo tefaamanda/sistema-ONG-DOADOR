@@ -216,6 +216,11 @@ main h1 {
     border-color: var(--branco);
 }
 
+.envio a {
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
 /* RODAPÉ */
 
 /* RESPONSIVO */
