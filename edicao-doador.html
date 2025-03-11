@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         $("#formCadastroUsuario").on("submit", function(e) {
@@ -60,20 +61,26 @@
         })
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- <script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
         $(document).ready(function () {
             let token = localStorage.getItem("token");
             let tipo = localStorage.getItem("tipo");
     
-            if (!token) {
-                // Se não houver token, redireciona para a página de erro
-                window.location.href = "pagina-erro.html";
-            } else if (tipo != 3) {
-                // Se o tipo não for Doador (3), redireciona para a página de erro
-                window.location.href = "pagina-erro.html";
+            if (!token || tipo != 3) {
+                // Exibe o alerta e só redireciona depois que o usuário clicar "OK"
+                Swal.fire({
+                    title: "Erro",
+                    text: "Você não pode acessar essa página!",
+                    icon: "error",
+                    confirmButtonText: "OK"
+                }).then(() => {
+                    window.location.href = "login.html"; // Redireciona após o alerta
+                });
             }
         });
-    </script> -->
+    </script>
 </head>
 <body style="background-color: #e6e5e5;">
     <header class="d-flex pt-3 align-items-center justify-content-center">
@@ -124,7 +131,7 @@
                         <label>Nome completo</label>
                         <div style="display: flex;">
                             <input type="text" class="aum">
-                            <a href="editar.html">
+                            <a href="">
                                 <img src="assets/img/editar.png" class="edit-icon" alt="Clique para editar.">
                             </a>              
                         </div>
@@ -134,7 +141,7 @@
                         <label>E-mail</label>
                         <div style="display: flex;">
                             <input type="email" class="aum">
-                            <a href="editar.html">
+                            <a href="">
                                     <img src="assets/img/editar.png" class="edit-icon" alt="Clique para editar.">
                             </a>            
                         </div>
@@ -144,7 +151,7 @@
                         <label>Senha</label>
                         <div style="display: flex;">
                             <input type="password" class="aum">
-                            <a href="editar.html">
+                            <a href="">
                                 <img src="assets/img/editar.png" class="edit-icon" alt="Clique para editar.">
                             </a>                
                         </div>
