@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <header class="d-flex pt-3 align-items-center justify-content-center">
@@ -54,7 +56,7 @@
             </div>
             <div class="envio">
                 <p class="nlogin">Não tem login? <a class="cadastro"><b>Cadastre-se!</b></a></p>
-                <button type="submit" class="bot-envio">ENVIAR</button>
+                <button id="btn" type="button">LOGAR NO SITE</button>
             </div>
         </div>
     </main>
@@ -94,5 +96,35 @@
             </div>
         </div>
     </footer>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $("#btn").on("click", function () {
+                let email = $("#email").val();
+                let senha = $("#senha").val();
+
+                // Simulação de login (substitua por requisição real ao backend)
+                if (email === "admin@email.com" && senha === "123456") {
+                    let token = "TOKEN_VALIDO";
+
+                    localStorage.setItem("token", token);
+                    localStorage.setItem("ID", "123"); // Exemplo de ID do usuário
+
+                    // Redireciona para a página principal
+                    window.location.href = "pagina_seguinte.html";
+                } else {
+                    alert("Email ou senha incorretos!");
+                }
+            });
+
+            // Verificação de token ao carregar a página
+            $(document).ready(function () {
+                let token = localStorage.getItem("token");
+
+                if (!token) {
+                    alert("Essa Página é restrita");
+                    window.location.href = "pagina-erro.html";
+                }
+            });
+        </script>
 </body>
 </html>
