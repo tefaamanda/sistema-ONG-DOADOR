@@ -176,6 +176,10 @@ main {
     font-weight: normal; 
 }
 
+a.no-underline {
+    text-decoration: none;
+}
+
 .fund-branc {
     height: 130px;
     border-radius: 13px;
@@ -314,70 +318,35 @@ footer {
 /* RESPONSIVO */
 
 @media (max-width: 426px) {
-    /* 🔹 Ajuste do cabeçalho */
-    header {
+       /* Início - Cabeçalho */
+
+       header {
         flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding-bottom: 10px;
         text-align: center;
-        gap: 10px;
-    }
-    main {
-        background-image: url(../img/fundo-log.png); /* Certifique-se de que o caminho está correto */
-        background-repeat: no-repeat;
-        background-size: cover; /* Garante que a imagem cobre toda a área */
-        background-position: center; /* Centraliza a imagem */
     }
 
-    .logo {
-        width: 120px;
-        margin: 0 auto;
-        padding: 10px 0;
+    .logo1 {
+        width: 150px;
+        margin: 0;
+        padding: 0;
     }
-    .input::placeholder {
-        color: var(--cinza);
-        padding-left: 1.5rem;
-    }
+
     .group {
         width: 90%;
         margin: 0 auto;
-        margin-bottom: 20px;
+        margin-bottom: 14px;
     }
 
     .text-nav {
-        font-size: 14px;
-        padding-left: 40px;
+        padding-left: 0;
+        font-size: 15px;
     }
 
-    .doe-agora {
-        font-size: 12px;
-        padding: 8px;
-    }
-    footer .row {
-        flex-direction: column;
-        text-align: center;
-    }
+    /* Fim - Cabeçalho */
 
-    .col-md-3, .col-md-2, .col-md-5 {
-        width: 100%;
-        margin-bottom: 15px;
-    }
-
-    .space {
-        justify-content: center;
-    }
-
-    .imgfooter {
-        width: 30px;
-    }
-
-    .azul h5 {
-        font-size: 12px;
-    }
-    .azul {
-        background-color: var(--azul);
-        color: var(--branco);
-        padding: 10px;
-        margin-top: 20px; /* Aumenta o espaço entre as redes sociais e o texto © 2025 */
-    }
     .banner {
         width: 100%;
         margin: 0;
@@ -435,12 +404,12 @@ footer {
     }
 
     .aum {
-        width: 150px; /* Ajuste para garantir que os inputs ocupem toda a largura */
+        width: 2100px; /* Ajuste para garantir que os inputs ocupem toda a largura */
         height: 40px;
     }
 
     .cor {
-        width: 100%; /* Ajuste o formulário para ocupar toda a largura */
+        width: 380px; /* Ajuste o formulário para ocupar toda a largura */
         padding: 20px; /* Ajusta o padding do formulário */
     }
 
@@ -456,9 +425,68 @@ footer {
     .delete-btn {
         width: 100%; /* O botão de excluir vai ocupar toda a largura da tela */
         padding: 15px; /* Ajuste no padding para facilitar o toque */
+        justify-content: center;
     }
 
     .esp-cliq {
         margin-bottom: 20px; /* Ajuste de margem inferior na coluna do Dashboard */
+        margin: 0 auto;
+        width: 200px;
+        height: 140px;
+    }
+
+    .edit-icon {
+        width: 63%;
+        margin-left: 5px;
+    }
+
+    /* Início - Rodapé */
+
+    footer {
+        padding-top: 40px;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .tamanho {
+        font-size: 15px;
+    }
+
+    .logo2 {
+        margin: auto;
+        margin-bottom: 55px;
+    }
+
+    .tam {
+        width: 160px;
+        margin-bottom: 37px;
+    }
+
+    .tam3 {
+        font-size: 15px;
+    }
+
+    .space {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-bottom: 45px;
+    }
+
+    .imgfooter {
+        width: 30px;
+    }
+
+    /* Fim - Rodapé */
+}
+
+@media (max-width: 376px) {
+    .cor {
+        width: 330px;
+    }
+}
+
+@media (max-width: 321px) {
+    .cor {
+        width: 280px;
     }
 }

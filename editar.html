@@ -58,6 +58,21 @@
             })
         })
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script>
+        $(document).ready(function () {
+            let token = localStorage.getItem("token");
+            let tipo = localStorage.getItem("tipo");
+    
+            if (!token) {
+                // Se não houver token, redireciona para a página de erro
+                window.location.href = "pagina-erro.html";
+            } else if (tipo != 3) {
+                // Se o tipo não for Doador (3), redireciona para a página de erro
+                window.location.href = "pagina-erro.html";
+            }
+        });
+    </script> -->
 </head>
 <body style="background-color: #e6e5e5;">
     <header class="d-flex pt-3 align-items-center justify-content-center">
@@ -92,20 +107,23 @@
     <!-- MAIN  -->
     <main class="container">
         <div class="row">
-            <div class="col-3 esp-cliq fund-branc">
-                <a href="" class="lar-sub espacar">Dashboard</a>
-                <a href="edicao-doador.html" class="lar-sub espacar active">Meu perfil</a>
-                <a href="" class="lar-sub">Sair</a>
+            <div class="col-md-3">
+                <div class="esp-cliq fund-branc">
+                    <a href="" class="lar-sub espacar">Dashboard</a>
+                    <a href="edicao-doador.html" class="lar-sub espacar active">Meu perfil</a>
+                    <a href="" class="lar-sub">Sair</a>
+                </div>
+                
             </div>
 
-            <div class="col-7">
+            <div class="col-md-7">
                 <h2 class="peq-esp">Meu perfil</h2>
                 <form class="cor">
                     <div class="form-group">
                         <label>Nome completo</label>
                         <div style="display: flex;">
                             <input type="text" class="aum">
-                            <a href="">
+                            <a href="editar.html">
                                 <img src="assets/img/editar.png" class="edit-icon" alt="Clique para editar.">
                             </a>              
                         </div>
@@ -115,7 +133,7 @@
                         <label>E-mail</label>
                         <div style="display: flex;">
                             <input type="email" class="aum">
-                            <a href="">
+                            <a href="editar.html">
                                     <img src="assets/img/editar.png" class="edit-icon" alt="Clique para editar.">
                             </a>            
                         </div>
@@ -125,15 +143,15 @@
                         <label>Senha</label>
                         <div style="display: flex;">
                             <input type="password" class="aum">
-                            <a href="">
+                            <a href="editar.html">
                                 <img src="assets/img/editar.png" class="edit-icon" alt="Clique para editar.">
                             </a>                
                         </div>
                     </div>
-                    <a href="edicao-doador.html">
-                        <button type="button" class="delete-btn">Salvar alterações</button>      
+        
+                    <a href="edicao-doador.html" class="no-underline">
+                        <button type="button" class="delete-btn">Salvar alterações</button>              
                     </a>
-
                 </form>
             </div>
         </div>
@@ -148,7 +166,7 @@
 
                 <div class="col-md-2 text-center">
                     <h5 class="pb-2">TELEFONE</h5>
-                    <h6>(18) 99120-3762</h6>
+                    <h6 style="margin-bottom: 50px;">(18) 99120-3762</h6>
                 </div>
 
                 <div class="col-md-2 text-center">
@@ -168,7 +186,7 @@
                 </div>
 
                 <div class="col-md-12 azul text-center">
-                    <h5>© 2025. Todos os direitos reservados.</h5>
+                    <h5 class="tamanho">© 2025. Todos os direitos reservados.</h5>
                 </div>
 
             </div>
