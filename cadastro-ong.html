@@ -70,19 +70,32 @@
 
                         <input type="text" placeholder="Nome do banco">
                     </div>
-                        <button id="btn">CADASTRAR NO SITE</button>
+                       <!-- Exemplo de código HTML do botão de cadastro -->
+                    <button id="btn">Cadastrar</button>
 
-                        <script>
-                            $("#btn").on("click", function(){
-                                
-                                let token = "TOKEN_AQUI"
-                    
-                                localStorage.setItem("token", token)
-                                localStorage.setItem("nome", "NOME")
-                                localStorage.setItem("ID", "ID do usuario")
-                    
-                            })
-                        </script>
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+                    <script>
+                        $(document).ready(function () {
+                            $("#btnCadastrar").on("click", function () {
+                                // Simula o cadastro, você pode pegar esses dados do formulário de cadastro
+                                let token = "TOKEN_AQUI"; // Aqui você pode gerar um token ou pegar um real do backend
+                                let tipo = $("input[name='tipo']:checked").val(); // Supondo que o tipo seja determinado via rádio (2 = ONG, 3 = Doador)
+
+                                // Salva no localStorage o token e o tipo do usuário
+                                localStorage.setItem("token", token);
+                                localStorage.setItem("tipo", tipo);
+
+                                // Redireciona para a página específica com base no tipo
+                                if (tipo == 2) {
+                                    window.location.href = "home_apos_cadstro_ong.html"; // Página para ONG
+                                } else if (tipo == 3) {
+                                    window.location.href = "edicao-doador.html"; // Página para Doador
+                                }
+                            });
+                        });
+                    </script>
+
                 </div>
 
             </div>
