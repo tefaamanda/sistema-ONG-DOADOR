@@ -60,17 +60,22 @@
             })
         })
     </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            let token = localStorage.getItem("token");
-            let tipo = localStorage.getItem("tipo");
-    
-            if (!token || tipo != 3) {
-                window.location.href = "pagina-erro.html";
-            }
-        });
-    </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        let token = localStorage.getItem("token");
+        let tipo = localStorage.getItem("tipo");
+
+        if (!token) {
+            // Se não houver token, redireciona para a página de erro
+            window.location.href = "pagina-erro.html";
+        } else if (tipo != 3) {
+            // Se o tipo não for Doador (3), redireciona para a página de erro
+            window.location.href = "pagina-erro.html";
+        }
+    });
+</script>
+
     
 </head>
 <body>

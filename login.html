@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header class="d-flex pt-3 align-items-center justify-content-center">
@@ -96,35 +97,40 @@
             </div>
         </div>
     </footer>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $("#btn").on("click", function () {
-                let email = $("#email").val();
-                let senha = $("#senha").val();
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $("#btn").on("click", function (event) {
+        event.preventDefault(); // Evita recarregar a página
 
-                // Simulação de login (substitua por requisição real ao backend)
-                if (email === "admin@email.com" && senha === "123456") {
-                    let token = "TOKEN_VALIDO";
+        let email = $(".input-log1").val();
+        let senha = $(".input-log2").val();
 
-                    localStorage.setItem("token", token);
-                    localStorage.setItem("ID", "123"); // Exemplo de ID do usuário
+        // Simulando um "banco de dados" no próprio JavaScript
+        let usuarios = [
+            { id: 1, email: "ong@email.com", senha: "123456", tipo: 2 },
+            { id: 2, email: "doador@email.com", senha: "654321", tipo: 3 }
+        ];
 
-                    // Redireciona para a página principal
-                    window.location.href = "pagina_seguinte.html";
-                } else {
-                    alert("Email ou senha incorretos!");
-                }
-            });
+        // Verifica se o email e senha existem na lista
+        let usuarioEncontrado = usuarios.find(user => user.email === email && user.senha === senha);
 
-            // Verificação de token ao carregar a página
-            $(document).ready(function () {
-                let token = localStorage.getItem("token");
+        if (usuarioEncontrado) {
+            // Cria um token falso e salva no localStorage
+            let token = Math.random().toString(36).substr(2); // Simula um token aleatório
+            localStorage.setItem("token", token);
+            localStorage.setItem("ID", usuarioEncontrado.id);
+            localStorage.setItem("tipo", usuarioEncontrado.tipo);
 
-                if (!token) {
-                    alert("Essa Página é restrita");
-                    window.location.href = "pagina-erro.html";
-                }
-            });
-        </script>
+            // Redireciona para a página correta
+            if (usuarioEncontrado.tipo == 2) {
+                window.location.href = "home_apos_cadstro_ong.html";
+            } else if (usuarioEncontrado.tipo == 3) {
+                window.location.href = "edicao-doador.html";
+            }
+        } else {
+            alert("Email ou senha incorretos!");
+        }
+    });
+</script>
 </body>
 </html>

@@ -16,12 +16,17 @@
         $(document).ready(function () {
             let token = localStorage.getItem("token");
             let tipo = localStorage.getItem("tipo");
-
-            if (!token || tipo != 2) {
+    
+            if (!token) {
+                // Se não houver token, redireciona para a página de erro
+                window.location.href = "pagina-erro.html";
+            } else if (tipo != 2) {
+                // Se o tipo não for ONG (2), redireciona para a página de erro
                 window.location.href = "pagina-erro.html";
             }
         });
     </script>
+    
 </head>
 <body>
     <script>
