@@ -176,6 +176,10 @@ main {
     font-weight: normal; 
 }
 
+a.no-underline {
+    text-decoration: none;
+}
+
 .fund-branc {
     height: 130px;
     border-radius: 13px;
@@ -314,70 +318,35 @@ footer {
 /* RESPONSIVO */
 
 @media (max-width: 426px) {
-    /* 🔹 Ajuste do cabeçalho */
-    header {
+       /* Início - Cabeçalho */
+
+       header {
         flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding-bottom: 10px;
         text-align: center;
-        gap: 10px;
-    }
-    main {
-        background-image: url(../img/fundo-log.png); /* Certifique-se de que o caminho está correto */
-        background-repeat: no-repeat;
-        background-size: cover; /* Garante que a imagem cobre toda a área */
-        background-position: center; /* Centraliza a imagem */
     }
 
-    .logo {
-        width: 120px;
-        margin: 0 auto;
-        padding: 10px 0;
+    .logo1 {
+        width: 150px;
+        margin: 0;
+        padding: 0;
     }
-    .input::placeholder {
-        color: var(--cinza);
-        padding-left: 1.5rem;
-    }
+
     .group {
         width: 90%;
         margin: 0 auto;
-        margin-bottom: 20px;
+        margin-bottom: 14px;
     }
 
     .text-nav {
-        font-size: 14px;
-        padding-left: 40px;
+        padding-left: 0;
+        font-size: 15px;
     }
 
-    .doe-agora {
-        font-size: 12px;
-        padding: 8px;
-    }
-    footer .row {
-        flex-direction: column;
-        text-align: center;
-    }
+    /* Fim - Cabeçalho */
 
-    .col-md-3, .col-md-2, .col-md-5 {
-        width: 100%;
-        margin-bottom: 15px;
-    }
-
-    .space {
-        justify-content: center;
-    }
-
-    .imgfooter {
-        width: 30px;
-    }
-
-    .azul h5 {
-        font-size: 12px;
-    }
-    .azul {
-        background-color: var(--azul);
-        color: var(--branco);
-        padding: 10px;
-        margin-top: 20px; /* Aumenta o espaço entre as redes sociais e o texto © 2025 */
-    }
     .banner {
         width: 100%;
         margin: 0;
@@ -388,7 +357,6 @@ footer {
         position: relative; /* Contêiner relativo */
         display: inline-block;
     }
-    
     
     .banner img {
         width: 100%;
@@ -412,67 +380,113 @@ footer {
         font-size: 18px;
         color: white; /* Cor do texto */
     }
-    main {
-        font-family: Arial, sans-serif;
-        background-color: #d9d9d9;
-        display: flex;
-        flex-direction: column;
-        align-items:center;
-        height:auto;
-        margin: 0;
-    }
-    input {
-        width: 150px;
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        background: #ddd;
-        cursor: not-allowed;
+
+    .container {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
-    .edit-btn {
-        background: #008cff;
-        color: white;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-
-        align-items: center;
-        gap: 5px;
+    .row {
+        flex-direction: column; /* Empilha as colunas em telas pequenas */
     }
 
-    .edit-btn:hover {
-        color: #0e0060;
+    .col-3, .col-7 {
+        width: 100%; /* Faz as colunas ocuparem toda a largura disponível */
+        margin-right: 0; /* Remove qualquer margem extra */
+        margin-bottom: 20px; /* Adiciona um espaço entre as colunas */
+    }
+
+    .fund-branc {
+        height: 150px; /* Ajuste a altura da coluna do Dashboard */
+        width: 100px;
+        margin-top: 20px; /* Ajuste de margem superior */
+    }
+
+    .aum {
+        width: 2100px; /* Ajuste para garantir que os inputs ocupem toda a largura */
+        height: 40px;
+    }
+
+    .cor {
+        width: 380px; /* Ajuste o formulário para ocupar toda a largura */
+        padding: 20px; /* Ajusta o padding do formulário */
+    }
+
+    h2 {
+        font-size: 20px; /* Tamanho do título reduzido em telas pequenas */
+    }
+
+    .lar-sub {
+        font-size: 14px; /* Reduz o tamanho da fonte dos links */
+        margin-bottom: 5px; /* Ajuste o espaçamento entre os links */
     }
 
     .delete-btn {
-        background: #ff6600;
-        color: white;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        align-items: center;
-        gap: 5px;
+        width: 100%; /* O botão de excluir vai ocupar toda a largura da tela */
+        padding: 15px; /* Ajuste no padding para facilitar o toque */
+        justify-content: center;
     }
 
-    .delete-btn:hover {
-        background: #cc5200;
+    .esp-cliq {
+        margin-bottom: 20px; /* Ajuste de margem inferior na coluna do Dashboard */
+        margin: 0 auto;
+        width: 200px;
+        height: 140px;
     }
 
-    .save-btn {
-        background: #00c638;
-        color: white;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        align-items: center;
-        gap: 5px;
+    .edit-icon {
+        width: 63%;
+        margin-left: 5px;
     }
 
-    .save-btn:hover {
-        background: #00451a;
+    /* Início - Rodapé */
+
+    footer {
+        padding-top: 40px;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .tamanho {
+        font-size: 15px;
+    }
+
+    .logo2 {
+        margin: auto;
+        margin-bottom: 55px;
+    }
+
+    .tam {
+        width: 160px;
+        margin-bottom: 37px;
+    }
+
+    .tam3 {
+        font-size: 15px;
+    }
+
+    .space {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-bottom: 45px;
+    }
+
+    .imgfooter {
+        width: 30px;
+    }
+
+    /* Fim - Rodapé */
+}
+
+@media (max-width: 376px) {
+    .cor {
+        width: 330px;
+    }
+}
+
+@media (max-width: 321px) {
+    .cor {
+        width: 280px;
     }
 }
