@@ -389,7 +389,6 @@ footer {
         display: inline-block;
     }
     
-    
     .banner img {
         width: 100%;
         height: 100%;
@@ -412,67 +411,54 @@ footer {
         font-size: 18px;
         color: white; /* Cor do texto */
     }
-    main {
-        font-family: Arial, sans-serif;
-        background-color: #d9d9d9;
-        display: flex;
-        flex-direction: column;
-        align-items:center;
-        height:auto;
-        margin: 0;
-    }
-    input {
-        width: 150px;
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        background: #ddd;
-        cursor: not-allowed;
+
+    .container {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
-    .edit-btn {
-        background: #008cff;
-        color: white;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-
-        align-items: center;
-        gap: 5px;
+    .row {
+        flex-direction: column; /* Empilha as colunas em telas pequenas */
     }
 
-    .edit-btn:hover {
-        color: #0e0060;
+    .col-3, .col-7 {
+        width: 100%; /* Faz as colunas ocuparem toda a largura disponível */
+        margin-right: 0; /* Remove qualquer margem extra */
+        margin-bottom: 20px; /* Adiciona um espaço entre as colunas */
+    }
+
+    .fund-branc {
+        height: 150px; /* Ajuste a altura da coluna do Dashboard */
+        width: 100px;
+        margin-top: 20px; /* Ajuste de margem superior */
+    }
+
+    .aum {
+        width: 150px; /* Ajuste para garantir que os inputs ocupem toda a largura */
+        height: 40px;
+    }
+
+    .cor {
+        width: 100%; /* Ajuste o formulário para ocupar toda a largura */
+        padding: 20px; /* Ajusta o padding do formulário */
+    }
+
+    h2 {
+        font-size: 20px; /* Tamanho do título reduzido em telas pequenas */
+    }
+
+    .lar-sub {
+        font-size: 14px; /* Reduz o tamanho da fonte dos links */
+        margin-bottom: 5px; /* Ajuste o espaçamento entre os links */
     }
 
     .delete-btn {
-        background: #ff6600;
-        color: white;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        align-items: center;
-        gap: 5px;
+        width: 100%; /* O botão de excluir vai ocupar toda a largura da tela */
+        padding: 15px; /* Ajuste no padding para facilitar o toque */
     }
 
-    .delete-btn:hover {
-        background: #cc5200;
-    }
-
-    .save-btn {
-        background: #00c638;
-        color: white;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        align-items: center;
-        gap: 5px;
-    }
-
-    .save-btn:hover {
-        background: #00451a;
+    .esp-cliq {
+        margin-bottom: 20px; /* Ajuste de margem inferior na coluna do Dashboard */
     }
 }
