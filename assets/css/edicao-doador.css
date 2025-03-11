@@ -13,7 +13,8 @@
     --cinza: #898989;
 }
 
-/* CABEÇALHO */
+/* Início - Cabeçalho */
+
 header {
     background-color: var(--branco);
     box-shadow: #2f303d25 2px 6px 5px;
@@ -23,8 +24,7 @@ header {
 
 .logo1 {
     padding-top: 10px;
-    padding-right: 30px;
-    width: 240px;
+    width: 205px;
     margin-left: -60px;
     padding-left: 50px;
 }
@@ -32,7 +32,6 @@ header {
 .text-nav {
     gap: 20px;
     text-decoration: none;
-    padding-left: 270px;
     align-items: center;
     font-family: 'Microsoft JhengHei UI', sans-serif;
     color: #000;
@@ -71,7 +70,6 @@ header {
     align-items: center;
     position: relative;
     max-width: 580px;
-    margin-left: 10px;
 }
   
 .input {
@@ -91,7 +89,6 @@ header {
   
 .input::placeholder {
     color: var(--cinza);
-    padding-left: 0.5rem;
 }
   
 .input:hover {
@@ -104,7 +101,7 @@ header {
   
 .input:focus {
     box-shadow: 0 0 0 2.5px #2f303d;
-    width: 400px !important;
+    width: 800px !important;
     border: none;
 }
 
@@ -118,7 +115,7 @@ header {
     z-index: 1;
 }
 
-/* FIM DO CABEÇALHO */
+/* Fim - Cabeçalho */
 
 .banner {
     width: 100%;
@@ -131,6 +128,10 @@ header {
     display: inline-block;
 }
 
+.lar-sub.active-link { 
+    text-decoration: underline; /* Sublinhado ao clicar */
+    font-weight: bold; /* Negrito ao clicar */
+}
 
 .banner img {
     width: 100%;
@@ -153,100 +154,102 @@ header {
     font-size: 22px;
     color: white; /* Cor do texto */
 }
+
 main {
     font-family: Arial, sans-serif;
-    background-color: #d9d9d9;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
     margin: 0;
 }
 
-        /* Estilo do Banner */
+.esp-cliq {
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
 
+.lar-sub {
+    text-decoration: none;
+    color: var(--laranja);
+    font-weight: normal; 
+}
 
-        /* Estilo do Formulário */
-        .container {
-            background: white;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            padding-left: 100px;
-            padding-right: 100px;
-            border-radius: 10px;
-            width: 400px;
-            margin-top: 100px;
-        }
+.fund-branc {
+    height: 130px;
+    border-radius: 13px;
+    margin-top: 48px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+}
 
-        h2 {
-            margin-bottom: 15px;
-        }
+.espacar {
+    margin-bottom: 10px;
+}
 
-        .form-group {
-            margin-bottom: 15px;
-            position: relative;
-        }
+h2 {
+    margin-bottom: 15px;
+}
 
-        label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
 
-        input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background: #ddd;
-            cursor: not-allowed;
-        }
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
 
-        .edit-btn {
-            background: #008cff;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #ddd;
+}
 
-            align-items: center;
-            gap: 5px;
-        }
+.aum {
+    width: 3200px;
+}
 
-        .edit-btn:hover {
-            color: #0e0060;
-        }
+.cor {
+    background-color: var(--branco);
+    width: 700px;
+    padding: 40px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
 
-        .delete-btn {
-            background: #ff6600;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            align-items: center;
-            gap: 5px;
-        }
+.peq-esp {
+    margin-top: 45px;
+}
 
-        .delete-btn:hover {
-            background: #cc5200;
-        }
+.edit-icon {
+    width: 53%;
+    margin-left: 5px;
+}
 
-        .save-btn {
-            background: #00c638;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            align-items: center;
-            gap: 5px;
-        }
+.delete-btn {
+    background: #ff6600;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 
-        .save-btn:hover {
-            background: #00451a;
-        }
+.delete-btn:hover {
+    background: #cc5200;
+}
 
         /* Início - Rodapé */
 
@@ -255,12 +258,27 @@ footer {
     padding-top: 60px;
 }
 
+.logo2 {
+    padding-top: 10px;
+    padding-right: 30px;
+    width: 170px;
+    margin-left: 79px;
+}
+
 .p-t {
-    padding-bottom: 60px;
+    padding-bottom: 40px;
 }
 
 .tam {
-    width: 80%;
+    width: 62%;
+}
+
+.tam2 {
+    font-size: 18px;
+}
+
+.tam3 {
+    font-size: 18px;
 }
 
 .azul {
@@ -273,18 +291,22 @@ footer {
     font-weight: normal;
 }
 
-
 .space {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    flex-wrap: wrap; /* Permite que os ícones quebrem linha em telas pequenas */
-    gap: 15px; /* Espaçamento entre os ícones */
+}
+
+.margin {
+    margin-top: -17.2px !important;
 }
 
 .imgfooter {
-    width: 35px; /* Tamanho fixo para os ícones */
-    height: auto;
+    width: 30px;
+}
+
+.alt {
+    width: 35px;
 }
 
 /* Fim - Rodapé */

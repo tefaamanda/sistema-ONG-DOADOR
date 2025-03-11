@@ -98,39 +98,25 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $("#btn").on("click", function (event) {
-        event.preventDefault(); // Evita recarregar a página
 
-        let email = $(".input-log1").val();
-        let senha = $(".input-log2").val();
-
-        // Simulando um "banco de dados" no próprio JavaScript
-        let usuarios = [
-            { id: 1, email: "ong@email.com", senha: "123456", tipo: 2 },
-            { id: 2, email: "doador@email.com", senha: "654321", tipo: 3 }
-        ];
-
-        // Verifica se o email e senha existem na lista
-        let usuarioEncontrado = usuarios.find(user => user.email === email && user.senha === senha);
-
-        if (usuarioEncontrado) {
-            // Cria um token falso e salva no localStorage
-            let token = Math.random().toString(36).substr(2); // Simula um token aleatório
-            localStorage.setItem("token", token);
-            localStorage.setItem("ID", usuarioEncontrado.id);
-            localStorage.setItem("tipo", usuarioEncontrado.tipo);
-
-            // Redireciona para a página correta
-            if (usuarioEncontrado.tipo == 2) {
-                window.location.href = "home_apos_cadstro_ong.html";
-            } else if (usuarioEncontrado.tipo == 3) {
-                window.location.href = "edicao-doador.html";
-            }
-        } else {
-            alert("Email ou senha incorretos!");
-        }
-    });
-</script>
+        <script>
+            $("#btn").on("click", function () {
+                // Simula um token e um tipo de usuário (2 = ONG, 3 = Doador)
+                let token = "TOKEN_AQUI"; 
+                let tipo = 2; // Substitua por 2 (ONG) ou 3 (Doador)
+        
+                // Salva no localStorage
+                localStorage.setItem("token", token);
+                localStorage.setItem("tipo", tipo);
+        
+                // Redireciona para a página correta
+                if (tipo == 2) {
+                    window.location.href = "painel_ong.html";
+                } else if (tipo == 3) {
+                    window.location.href = "painel_doador.html";
+                }
+            });
+        </script>
+    
 </body>
 </html>
