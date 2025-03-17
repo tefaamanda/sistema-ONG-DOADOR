@@ -10,6 +10,7 @@
     --azul: #082C5B;
     --branco: white;
     --cinza: #898989;
+    --cinzaclaro: #E6E6E6;
 }
 
 /* Início - Cabeçalho */
@@ -39,6 +40,31 @@ header {
 
 .text-nav:hover {
     color: var(--laranja);
+}
+
+.text-nav2 {
+    gap: 20px;
+    text-decoration: none;
+    align-items: center;
+    font-family: 'Microsoft JhengHei UI', sans-serif;
+    color: #000;
+    font-size: 15px;
+}
+
+.text-nav3 {
+    gap: 20px;
+    text-decoration: none;
+    align-items: center;
+    font-family: 'Microsoft JhengHei UI', sans-serif;
+    color: #000;
+    font-size: 15px;
+    border: 2px solid transparent; 
+}
+
+.text-nav3:hover {
+    color: var(--laranja);
+    background-color: var(--branco);
+    border-color: var(--laranja);
 }
 
 .doe-agora {
@@ -73,7 +99,7 @@ header {
   
 .input {
     font-family: 'Microsoft JhengHei UI', sans-serif;
-    width: 100%;
+    width: 340px;
     height: 30px;
     padding-left: 2.5rem;
     box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
@@ -84,23 +110,24 @@ header {
     color: var(--cinza);
     cursor: text;
     z-index: 0;
+    transition: box-shadow 0.3s ease;
 }
-  
+
 .input::placeholder {
     color: var(--cinza);
 }
-  
+
 .input:hover {
     box-shadow: 0 0 0 2.5px #2f303d, 0px 0px 25px -15px #000;
 }
-  
+
 .input:active {
     transform: scale(0.95);
 }
-  
+
 .input:focus {
     box-shadow: 0 0 0 2.5px #2f303d;
-    width: 800px !important;
+    width: 340px;
     border: none;
 }
 
@@ -114,10 +141,157 @@ header {
     z-index: 1;
 }
 
+.btn-lar {
+    background-color: var(--laranja);
+    color: var(--branco);
+    padding: 10px;
+    border-radius: 15px;
+}
+
 /* Fim - Cabeçalho */
 
 .banner {
-    width: 80%;
+    width: 100%;
+}
+
+.laranja {
+    background-color: var(--laranja);
+    width: 100%;
+    padding-top: 50px;
+}
+
+.row .col-12.col-md-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.tam-imgs {
+    max-width: 44%;
+    height: auto;
+    padding-top: 70px;
+}
+
+.branco {
+    color: var(--branco);
+    font-size: 25px;
+    font-weight: bold; 
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.4; 
+    padding-top: 20px;
+    padding-bottom: 70px;
+}
+
+.letra-azul {
+    color: var(--azul);
+}
+
+.titulo {
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: var(--azul);
+    padding-left: 52px;
+}
+
+.cor-jus {
+    color: var(--azul);
+    text-align: justify;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 52px;
+    padding-bottom: 65px;
+}
+
+h2 {
+    padding-top: 65px;
+    padding-bottom: 20px;
+}
+
+.img-centralizada {
+    max-width: 100%;
+    height: auto;
+}
+
+.cor-fund-cinz {
+    background-color: var(--cinzaclaro);
+}
+
+.esp-left {
+    padding-left: 120px !important;
+}
+
+#carouselExampleIndicators {
+    max-width: 60%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+
+.btn-slide {
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--laranja);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 15;
+    border: 3px solid transparent; 
+}
+
+.btn-slide:hover {
+    background-color: var(--branco);
+    border-color: var(--laranja);
+    color: var(--laranja);
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: var(--laranja) !important;
+}
+
+.carousel-control-next-icon {
+    background-image: url('/assets/img/setaa2.png') !important;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.carousel-control-prev-icon {
+    background-image: url('/assets/img/setaa1.png') !important;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.laranja .carousel-control-next-icon {
+    background-image: url('/assets/img/seta2.png') !important;
+    width: 60px !important;
+    height: 60px !important;
+}
+
+.laranja .carousel-control-prev-icon {
+    background-image: url('/assets/img/seta1.png') !important;
+    width: 60px !important;
+    height: 60px !important;
+}
+
+.laranja .carousel-control-next {
+    right: -5%;
+}
+
+.laranja .carousel-control-prev {
+    left: -5%;
+}
+
+.carousel {
+    max-width: 700px;
+    padding-bottom: 30px;
 }
 
 /* Início - Rodapé */
@@ -139,7 +313,7 @@ footer {
 }
 
 .tam {
-    width: 62%;
+    width: 67%;
 }
 
 .tam2 {
@@ -179,3 +353,54 @@ footer {
 }
 
 /* Fim - Rodapé */
+
+/* RESPONSIVO */
+
+@media (max-width: 426px) {
+    /* Início - Cabeçalho */
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+    
+    .logo1 {
+        width: 150px;
+        margin: 0;
+        padding: 0;
+        padding-top: 18px;
+    }
+
+    .group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .input {
+        width: 80%;
+        max-width: 400px;
+        margin-bottom: 1px;
+        resize: none;
+        transform: none;
+        width: auto;
+    }
+    
+    .text-nav {
+        padding-left: 0;
+        font-size: 15px;
+    }
+
+    .text-nav3 {
+        margin-bottom: 40px !important;
+    }
+
+    /* Fim - Cabeçalho */
+}
