@@ -291,57 +291,53 @@ def deletar_cadastro(id):
 
 # LOGIN
 
-tentativas = 0
 @app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
-    nome = data.get('nome')
+
     e_mail = data.get('e_mail')
     senha = data.get('senha')
 
     global tentativas
 
     cursor = con.cursor()
-    cursor.execute("select nome, e_mail, senha, tipo, id_usuario, ativo from usuario WHERE e_mail = ?", (e_mail,))
+    cursor.execute("SELECT nome, e_mail, senha, tipo, id_usuario, ativo FROM usuario WHERE e_mail = ?", (e_mail,))
     login_data = cursor.fetchone()
 
-    if login_data[5] != 0:
-        if not login_data:
-            cursor.close()
-            return jsonify({'erro': "Credenciais não encontradas"}), 400
+    # Verifique se login_data é None antes de acessar os dados
+    if login_data is None:
+        cursor.close()
+        return jsonify({'erro': "Credenciais não encontradas"}), 400
 
-        senha_hash = login_data[2]
+    # Se o usuário não estiver ativo
+    if login_data[5] != 1:
+        return jsonify({'message': "Usuário Inativo!"})
 
-        if check_password_hash(senha_hash, senha):
-            if login_data[3] == 2:
-                return jsonify({
-                    'message': "Login feito com sucesso!"
-                })
-            if login_data[3] == 3:
-                return jsonify({
-                    'message': "Login feito com sucesso!"
-                })
-            else:
-                return jsonify({
-                    'message': "Login feito com sucesso!"
-                })
-        if login_data[3] != 1:
-            tentativas = tentativas + 1
+    senha_hash = login_data[2]
 
-            if tentativas == 3:
-                cursor = con.cursor()
-                cursor.execute("update usuario set ativo = 0 where id_usuario = ?", (login_data[4],))
+    # Verifica se a senha está correta
+    if check_password_hash(senha_hash, senha):
+        token = generate_token(login_data[4])
 
-                con.commit()
-                cursor.close()
-
-                return jsonify({
-                    'message': "Usuário Inativo!"
-                })
-
+        # Retorna a resposta com o tipo de usuário
         return jsonify({
-                'message': "Erro no login!"
-            })
-    return jsonify({
-        'message': "Usuário Inativo!"
-    })
+            'message': "Login feito com sucesso!",
+            'tipo': login_data[3],
+            'nome': login_data[0],
+            'e_mail': login_data[1],
+            'id_usuario': login_data[4],
+            'token': token
+        })
+
+    if login_data[3] != 1:
+        tentativas += 1
+
+        if tentativas == 3:
+            cursor.execute("UPDATE usuario SET ativo = 0 WHERE id_usuario = ?", (login_data[4],))
+            con.commit()
+
+            cursor.close()
+
+            return jsonify({'message': "Usuário Inativo!"})
+
+    return jsonify({'message': "Erro no login!"})
