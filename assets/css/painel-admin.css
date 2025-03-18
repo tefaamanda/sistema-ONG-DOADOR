@@ -278,8 +278,6 @@ a {
 
 .botao {
     margin: 40px;
-    margin-left: 300px;
-    margin-right: 300px;
 }
 
 .aprovacaoONG {
@@ -512,17 +510,30 @@ footer {
         font-size: 15px;
     }
     
-    .botao {
-        width: 100px;
-        justify-content: center !important;
-        align-items: center;
-    }
-    .aprovacaoONG {
-        
-    }
-    /* Fim - Cabeçalho */
 
+    .aprovacaoONG {
+        background-color: white;
+        padding: 20px;
+        width: 90%; /* Ajusta para ocupar 90% da tela */
+        max-width: 700px; /* Limita a largura máxima */
+        border-radius: 15px;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+    }
+
+
+
+    .btn-download {
+        display: flex;
+        justify-content: flex-start !important; /* Garante que vá para a esquerda */
+        margin-left: 10px !important; /* Ajusta margem para garantir alinhamento */
+        align-items: center;
+        position: relative !important;
+        left: 0 !important;
+        right: auto !important;
+    }
 }
+
 
 @media (max-width: 375px) {
 
@@ -550,6 +561,26 @@ footer {
     .text-nav {
         padding-left: 0;
         font-size: 14px;
+    }
+
+    .aprovacaoONG {
+        background-color: white;
+        padding: 20px;
+        width: 90%; /* Ajusta para ocupar 90% da tela */
+        max-width: 700px; /* Limita a largura máxima */
+        border-radius: 15px;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+    }
+    
+    .btn-download {
+        display: flex;
+        justify-content: flex-start !important; /* Garante que vá para a esquerda */
+        margin-left: 10px !important; /* Ajusta margem para garantir alinhamento */
+        align-items: center;
+        position: relative !important;
+        left: 0 !important;
+        right: auto !important;
     }
 
     /* Fim - Cabeçalho */
@@ -583,6 +614,25 @@ footer {
         font-size: 13px;
     }
 
+    .aprovacaoONG {
+        background-color: white;
+        padding: 20px;
+        width: 90%; /* Ajusta para ocupar 90% da tela */
+        max-width: 700px; /* Limita a largura máxima */
+        border-radius: 15px;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+    }
+    
+    .btn-download {
+        display: flex;
+        justify-content: flex-start !important; /* Garante que vá para a esquerda */
+        margin-left: 10px !important; /* Ajusta margem para garantir alinhamento */
+        align-items: center;
+        position: relative !important;
+        left: 0 !important;
+        right: auto !important;
+    }
     /* Fim - Cabeçalho */
 
 }
@@ -623,7 +673,15 @@ footer {
     .imgfooter {
         width: 30px;
     }
-
+    .aprovacaoONG {
+        background-color: white;
+        padding: 20px;
+        width: 90%; /* Ajusta para ocupar 90% da tela */
+        max-width: 700px; /* Limita a largura máxima */
+        border-radius: 15px;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+    }
     /* Fim - Rodapé */
 
 }
@@ -660,7 +718,15 @@ footer {
     .imgfooter {
         width: 35px;
     }
-
+    .aprovacaoONG {
+        background-color: white;
+        padding: 20px;
+        width: 90%; /* Ajusta para ocupar 90% da tela */
+        max-width: 700px; /* Limita a largura máxima */
+        border-radius: 15px;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+    }
     /* Fim - Rodapé */
 
 }
@@ -691,7 +757,15 @@ footer {
     .tam2 {
         padding-top: 30px;
     }
-
+    .aprovacaoONG {
+        background-color: white;
+        padding: 20px;
+        width: 90%; /* Ajusta para ocupar 90% da tela */
+        max-width: 700px; /* Limita a largura máxima */
+        border-radius: 15px;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+    }
     /* Fim - Rodapé */
 
 }
