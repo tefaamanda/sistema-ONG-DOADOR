@@ -157,7 +157,11 @@ header {
 .laranja {
     background-color: var(--laranja);
     width: 100%;
-    padding-top: 50px;
+    padding-top: 18px;
+}
+
+.pad {
+    padding-top: 55px;
 }
 
 .row .col-12.col-md-4 {
@@ -294,6 +298,10 @@ h2 {
     padding-bottom: 30px;
 }
 
+.espac {
+    padding-bottom: 0px;
+}
+
 /* Início - Rodapé */
 
 footer {
@@ -363,7 +371,7 @@ footer {
         flex-direction: column;
         align-items: center;
         gap: 15px;
-        padding-bottom: 10px;
+        padding-bottom: 48px;
         text-align: center;
     }
     
@@ -402,5 +410,118 @@ footer {
         margin-bottom: 40px !important;
     }
 
+    .text-nav3 {
+        margin-bottom: 30px;
+    } 
+    
+    .btn-lar {
+        margin-bottom: 30px;
+    }
+
     /* Fim - Cabeçalho */
+
+    .banner {
+        width: 100%;
+    }
+
+    .laranja {
+        padding-top: 0px;
+    }
+
+    .tam-imgs {
+        max-width: 25%;
+    }
+
+    .branco {
+        padding-bottom: 0px;
+        font-size: 20px;
+    }
+
+    .espac {
+        padding-bottom: 65px;
+    }
+
+    .titulo {
+        text-align: center;
+        padding-left: 30px;
+        padding-right: 19px;
+    }
+
+    .cor-jus {
+        padding-left: 9px;
+        padding-bottom: 0px;
+        padding-right: 10px;
+        font-size: 18px;
+    }
+
+    .img-centralizada {
+        margin-bottom: 26px;
+    }
+
+    .esp-left {
+        padding-left: 17px !important;
+    }
+
+    #carouselExampleIndicators {
+        max-width: 100%;
+    }
+
+    .btn-slide {
+        padding: 9px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 15px;
+    }
+
+    .esp-left {
+        padding-top: 45px;
+    }
+
+    /* Início - Rodapé */
+
+    footer {
+        padding-top: 18px;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .tamanho {
+        font-size: 25px;
+    }
+
+    .logo2 {
+        margin: auto;
+        margin-bottom: 55px;
+        padding-top: 0px;
+        padding-right: 0px;
+    }
+
+    .tam {
+        width: 160px;
+        margin-bottom: 27px;
+    }
+
+    .space {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-bottom: 45px;
+    }
+
+    .imgfooter {
+        width: 30px;
+    }
+
+    .alt {
+        width: 35px;
+    }
+
+    .p-t {
+        padding-bottom: 10px;
+    }
+
+    .p-tt {
+        padding-bottom: 10px;
+    }
+
+    /* Fim - Rodapé */
 }
