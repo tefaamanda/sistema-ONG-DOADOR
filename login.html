@@ -52,7 +52,10 @@
                 <label class="label-log" for="email">Email</label>
                 <input class="input-log1" type="email" required>
                 <label class="label-log" for="senha">Senha</label>
-                <input class="input-log2" type="password">
+                <div class="input-container">
+                    <input id="senha" class="input-log2" type="password">
+                    <img id="eye-icon" class="eye-icon" src="assets/img/olho.png" alt="Mostrar/Ocultar Senha" onclick="togglePassword()">
+                </div>
             </div>
             <div class="envio">
                 <p class="nlogin">Não tem login? <a class="cadastro"><a href="cadastro-ong.html" target="_blank">Cadastre-se!</a></a></p>
@@ -137,6 +140,17 @@
                     this.placeholder = "Busque por ONGs...";
                 });
             });
+
+            function togglePassword() {
+                var senhaField = document.getElementById("senha");
+                var eyeIcon = document.getElementById("eye-icon");
+
+                if (senhaField.type === "password") {
+                    senhaField.type = "text";
+                } else {
+                    senhaField.type = "password";
+                }
+            }
         </script>
 
 </body>
