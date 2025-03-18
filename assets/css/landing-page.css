@@ -167,7 +167,6 @@ header {
 .row .col-12.col-md-4 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
 }
@@ -524,4 +523,17 @@ footer {
     }
 
     /* Fim - Rodapé */
+}
+
+@media (max-width: 376px) {
+    .titulo {
+        padding-left: 13px;
+    }
+
+    .btn-slide {
+        padding: 9px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 12px;
+    }
 }
