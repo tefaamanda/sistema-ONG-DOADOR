@@ -233,6 +233,16 @@ main h1 {
     text-decoration: none;
 }
 
+.eye-icon {
+    position: absolute;
+    right: 105px;
+    top: 73%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+}
+
 /* Início - Rodapé */
 
 footer {
