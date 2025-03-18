@@ -1,0 +1,504 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: Poppins, serif;
+    text-decoration: none;
+}
+
+:root {
+    --laranja: #F37500;
+    --azul: #082C5B;
+    --branco: white;
+    --cinza: #898989;
+}
+
+/* Início - Cabeçalho */
+
+header {
+    background-color: var(--branco);
+    box-shadow: #2f303d25 2px 6px 5px;
+    padding-bottom: 10px;
+    gap: 50px;
+}
+
+.logo1 {
+    padding-top: 10px;
+    width: 205px;
+    margin-left: -60px;
+    padding-left: 50px;
+}
+
+.text-nav {
+    gap: 20px;
+    text-decoration: none;
+    align-items: center;
+    font-family: 'Microsoft JhengHei UI', sans-serif;
+    color: #000;
+    font-size: 15px;
+}
+
+.text-nav:hover {
+    color: var(--laranja);
+}
+
+.doe-agora {
+    font-size: 15px;
+    gap: 20px;
+    text-decoration: none;
+    margin-left: 50px;
+    align-items: center;
+    font-family: 'Microsoft JhengHei UI', sans-serif;
+    color: var(--branco);
+    background-color: var(--laranja);
+    border-radius: 25px;
+    border-color: var(--laranja);
+    border: none;
+    padding: 10px;
+}
+
+.doe-agora:hover {
+    color: var(--laranja);
+    background-color: var(--branco);
+    border-color: var(--laranja);
+    border: 2px solid var(--laranja);
+}
+
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    max-width: 580px;
+}
+  
+.input {
+    font-family: 'Microsoft JhengHei UI', sans-serif;
+    width: 100%;
+    height: 30px;
+    padding-left: 2.5rem;
+    box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+    border: 0;
+    border-radius: 23px;
+    background-color: var(--branco);
+    outline: none;
+    color: var(--cinza);
+    cursor: text;
+    z-index: 0;
+}
+  
+.input::placeholder {
+    color: var(--cinza);
+}
+  
+.input:hover {
+    box-shadow: 0 0 0 2.5px #2f303d, 0px 0px 25px -15px #000;
+}
+  
+.input:active {
+    transform: scale(0.95);
+}
+  
+.input:focus {
+    box-shadow: 0 0 0 2.5px #2f303d;
+    width: 800px !important;
+    border: none;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    fill: #89898c;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Fim - Cabeçalho */
+
+.banner {
+    width: 100%;
+    margin: 0;
+    height: 350px;
+    background-image: url("assets/img/doadorfundo.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Contêiner relativo */
+    display: inline-block;
+}
+
+.lar-sub.active-link { 
+    text-decoration: underline; /* Sublinhado ao clicar */
+    font-weight: bold; /* Negrito ao clicar */
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;/* Ajusta a imagem para cobrir o espaço sem distorcer */
+}
+
+.banner h1 {
+    position: absolute; /* Texto absoluto em relação ao contêiner */
+    top: 120px; /* Ajuste a posição vertical */
+    left: 50px; /* Ajuste a posição horizontal */
+    color: white; /* Cor do texto */
+
+}
+.banner p {
+    position: absolute; /* Texto absoluto em relação ao contêiner */
+    top: 200px; /* Ajuste a posição vertical */
+    left: 50px; /* Ajuste a posição horizontal */
+    font-size: 22px;
+    color: white; /* Cor do texto */
+}
+
+main {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.esp-cliq {
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
+
+.lar-sub {
+    text-decoration: none;
+    color: var(--laranja);
+    font-weight: normal; 
+}
+
+a.no-underline {
+    text-decoration: none;
+}
+
+.fund-branc {
+    height: 130px;
+    border-radius: 13px;
+    margin-top: 48px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+}
+
+.espacar {
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #ddd;
+}
+
+.aum {
+    width: 3200px;
+}
+
+.cor {
+    background-color: var(--branco);
+    width: 700px;
+    padding: 40px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+
+.peq-esp {
+    margin-top: 45px;
+}
+
+.edit-icon {
+    width: 53%;
+    margin-left: 5px;
+}
+
+.delete-btn {
+    background: #ff6600;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.delete-btn:hover {
+    background: #cc5200;
+}
+
+        /* Início - Rodapé */
+
+footer {
+    background-color: var(--branco);
+    padding-top: 60px;
+}
+
+.logo2 {
+    padding-top: 10px;
+    padding-right: 30px;
+    width: 170px;
+    margin-left: 79px;
+}
+
+.p-t {
+    padding-bottom: 40px;
+}
+
+.tam {
+    width: 62%;
+}
+
+.tam2 {
+    font-size: 18px;
+}
+
+.tam3 {
+    font-size: 18px;
+}
+
+.azul {
+    background-color: var(--azul);
+    color: var(--branco);
+    padding: 10px;
+}
+
+.azul h5 {
+    font-weight: normal;
+}
+
+.space {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.margin {
+    margin-top: -17.2px !important;
+}
+
+.imgfooter {
+    width: 30px;
+}
+
+.alt {
+    width: 35px;
+}
+
+.form-group p {
+    font-size: 14px;
+    padding-left: 500px;
+}
+.form-group h3 {
+    padding-top: 5px;
+}
+/* Fim - Rodapé */
+
+/* RESPONSIVO */
+
+@media (max-width: 426px) {
+       /* Início - Cabeçalho */
+
+       header {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    .logo1 {
+        width: 150px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .group {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 14px;
+    }
+
+    .text-nav {
+        padding-left: 0;
+        font-size: 15px;
+    }
+
+    /* Fim - Cabeçalho */
+
+    .banner {
+        width: 100%;
+        margin: 0;
+        height: 200px;
+        background-image: url("assets/img/doadorfundo.jpg");
+        background-size: cover;
+        background-position: center;
+        position: relative; /* Contêiner relativo */
+        display: inline-block;
+    }
+    
+    .banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        display: block;/* Ajusta a imagem para cobrir o espaço sem distorcer */
+    }
+    
+    .banner h1 {
+        position: absolute; /* Texto absoluto em relação ao contêiner */
+        top: 30px; /* Ajuste a posição vertical */
+        left: 30px; /* Ajuste a posição horizontal */
+        color: white; 
+        justify-content: center;/* Cor do texto */
+    
+    }
+    .banner p {
+        position: absolute; /* Texto absoluto em relação ao contêiner */
+        top: 80px; /* Ajuste a posição vertical */
+        left: 30px; /* Ajuste a posição horizontal */
+        font-size: 18px;
+        color: white; /* Cor do texto */
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .row {
+        flex-direction: column; /* Empilha as colunas em telas pequenas */
+    }
+
+    .col-3, .col-7 {
+        width: 100%; /* Faz as colunas ocuparem toda a largura disponível */
+        margin-right: 0; /* Remove qualquer margem extra */
+        margin-bottom: 20px; /* Adiciona um espaço entre as colunas */
+    }
+
+    .fund-branc {
+        height: 150px; /* Ajuste a altura da coluna do Dashboard */
+        width: 100px;
+        margin-top: 20px; /* Ajuste de margem superior */
+    }
+
+    .aum {
+        width: 2100px; /* Ajuste para garantir que os inputs ocupem toda a largura */
+        height: 40px;
+    }
+
+    .cor {
+        width: 380px; /* Ajuste o formulário para ocupar toda a largura */
+        padding: 20px; /* Ajusta o padding do formulário */
+        height: 200px;
+        border: 1px solid #000;
+        overflow-y: auto; /* Habilita rolagem vertical */
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px; /* Tamanho do título reduzido em telas pequenas */
+    }
+
+    .lar-sub {
+        font-size: 14px; /* Reduz o tamanho da fonte dos links */
+        margin-bottom: 5px; /* Ajuste o espaçamento entre os links */
+    }
+
+    .delete-btn {
+        width: 100%; /* O botão de excluir vai ocupar toda a largura da tela */
+        padding: 15px; /* Ajuste no padding para facilitar o toque */
+        justify-content: center;
+    }
+
+    .esp-cliq {
+        margin-bottom: 20px; /* Ajuste de margem inferior na coluna do Dashboard */
+        margin: 0 auto;
+        width: 200px;
+        height: 140px;
+    }
+
+    .edit-icon {
+        width: 63%;
+        margin-left: 5px;
+    }
+
+
+    /* Início - Rodapé */
+
+    footer {
+        padding-top: 40px;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .tamanho {
+        font-size: 15px;
+    }
+
+    .logo2 {
+        margin: auto;
+        margin-bottom: 55px;
+    }
+
+    .tam {
+        width: 160px;
+        margin-bottom: 37px;
+    }
+
+    .tam3 {
+        font-size: 15px;
+    }
+
+    .space {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-bottom: 45px;
+    }
+
+    .imgfooter {
+        width: 30px;
+    }
+
+    /* Fim - Rodapé */
+}
+
+@media (max-width: 376px) {
+    .cor {
+        width: 330px;
+    }
+}
+
+@media (max-width: 321px) {
+    .cor {
+        width: 280px;
+    }
+}
