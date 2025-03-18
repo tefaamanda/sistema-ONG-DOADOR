@@ -99,7 +99,7 @@ header {
   
 .input {
     font-family: 'Microsoft JhengHei UI', sans-serif;
-    width: 340px;
+    width: 344px;
     height: 30px;
     padding-left: 2.5rem;
     box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
@@ -535,5 +535,12 @@ footer {
         padding-top: 5px;
         padding-bottom: 5px;
         font-size: 12px;
+    }
+}
+
+@media (max-width: 321px) {
+    .input:focus {
+        width: 300px !important;
+        font-size: 13.8px;
     }
 }

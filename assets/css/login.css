@@ -11,7 +11,8 @@
     --cinza: #898989;
 }
 
-/* CABEÇALHO */
+/* Início - Cabeçalho */
+
 header {
     background-color: var(--branco);
     box-shadow: #2f303d25 2px 6px 5px;
@@ -19,17 +20,16 @@ header {
     gap: 50px;
 }
 
-.logo {
+.logo1 {
     padding-top: 10px;
-    padding-right: 30px;
-    width: 150px;
+    width: 205px;
     margin-left: -60px;
+    padding-left: 50px;
 }
 
 .text-nav {
     gap: 20px;
     text-decoration: none;
-    padding-left: 500px;
     align-items: center;
     font-family: 'Microsoft JhengHei UI', sans-serif;
     color: #000;
@@ -62,16 +62,15 @@ header {
     border: 2px solid var(--laranja);
 }
 
-/* BARRA DE BUSCA */
 .group {
     display: flex;
     line-height: 28px;
     align-items: center;
     position: relative;
     max-width: 580px;
-  }
+}
   
-  .input {
+.input {
     font-family: 'Microsoft JhengHei UI', sans-serif;
     width: 100%;
     height: 30px;
@@ -82,28 +81,29 @@ header {
     background-color: var(--branco);
     outline: none;
     color: var(--cinza);
-    transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
     cursor: text;
     z-index: 0;
-  }
+}
   
-  .input::placeholder {
+.input::placeholder {
     color: var(--cinza);
-  }
+}
   
-  .input:hover {
+.input:hover {
     box-shadow: 0 0 0 2.5px #2f303d, 0px 0px 25px -15px #000;
-  }
+}
   
-  .input:active {
+.input:active {
     transform: scale(0.95);
-  }
+}
   
-  .input:focus {
+.input:focus {
     box-shadow: 0 0 0 2.5px #2f303d;
-  }
-  
-  .search-icon {
+    width: 800px !important;
+    border: none;
+}
+
+.search-icon {
     position: absolute;
     left: 1rem;
     fill: #89898c;
@@ -111,7 +111,20 @@ header {
     height: 1rem;
     pointer-events: none;
     z-index: 1;
-  }
+}
+
+.lar-sub {
+    text-decoration: none;
+    color: var(--laranja);
+    font-weight: normal; 
+}
+
+.lar-sub.active-link { 
+    text-decoration: underline; /* Sublinhado ao clicar */
+    font-weight: bold; /* Negrito ao clicar */
+}
+
+/* Fim - Cabeçalho */
   
 /* MAIN */
 main {
@@ -189,8 +202,6 @@ main h1 {
     cursor: text;
 }
 
-
-
 .label-log {
     padding-left: 10px;
 }
@@ -221,10 +232,96 @@ main h1 {
     color: white;
     text-decoration: none;
 }
-/* RODAPÉ */
+
+/* Início - Rodapé */
+
+footer {
+    background-color: var(--branco);
+    padding-top: 60px;
+}
+
+.logo2 {
+    padding-top: 10px;
+    padding-right: 30px;
+    width: 170px;
+    margin-left: 79px;
+}
+
+.p-t {
+    padding-bottom: 40px;
+}
+
+.tam {
+    width: 67%;
+}
+
+.tam2 {
+    font-size: 18px;
+}
+
+.tam3 {
+    font-size: 18px;
+}
+
+.azul {
+    background-color: var(--azul);
+    color: var(--branco);
+    padding: 10px;
+}
+
+.azul h5 {
+    font-weight: normal;
+}
+
+.space {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.imgfooter {
+    width: 30px;
+}
+
+.alt {
+    width: 35px;
+}
+
+.margin {
+    margin-bottom: 18px !important;
+}
+
+/* Fim - Rodapé */
 
 /* RESPONSIVO */
-@media (max-width: 430px){
+
+@media (max-width: 426px) {
+    /* Início - Cabeçalho */
+
+    header {
+        padding-bottom: 45px;
+        gap: 15px;
+    }
+
+    .logo1 {
+        padding-top: 22px;
+        width: 208px;
+    }
+
+    .text-nav {
+        padding-left: 43px;
+    }
+
+    .group {
+        padding-bottom: 27px;
+    }
+
+    .input:focus {
+        width: 340px !important;
+    }
+
+    /* Fim - Cabeçalho */
+    
     main {
         display: flex;
         flex-direction: column;
@@ -267,12 +364,15 @@ main h1 {
     .bot-envio {
         margin-left: 150px;
         margin-right: 150px;
+        margin-bottom: 30px;
     }
+
     .parte-principal { 
         width: 100vw; 
         overflow-x: hidden; 
         box-sizing: border-box; 
-      } 
+    } 
+
     header {
         display: flex;
         flex-direction: column;
@@ -288,12 +388,14 @@ main h1 {
         margin-left: -50px;
         line-height: 1px;
     }
+
     .logo {
         align-items: center;
         justify-content: center;
         margin-left: 15px;
         margin-bottom: -20px;
     }
+
     .doe-agora { 
         align-items: center;
         justify-content: center;
@@ -301,76 +403,83 @@ main h1 {
         gap: 20px;
         margin-bottom: 20px;
     } 
-}
 
-@media (max-width:770px) { 
-    .logo {
-        margin-left: 15px;
+    .col-sb {
+        padding-top: 25px;
+        padding-right: 13px;
     }
-    .menu { 
-        display: none; 
-        flex-direction: column; 
-        gap: 10px; 
-        padding-left: 0; 
-        position: absolute; 
-        top: 50px; 
-        left: 0; 
-        background: white; 
-        width: 100%; 
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-      } 
-     
-      .menu.show { 
-        display: flex; 
-      } 
-     
-      .menu-toggle { 
-        display: block; 
-      } 
-}
 
-@media (max-width:1099px) { 
-.logo {
-        margin-left: 15px;
+    /* Início - Rodapé */
+
+    footer {
+        padding-top: 18px;
+        margin-top: 40px;
+        text-align: center;
     }
-.text-nav { 
-        gap: 20px; 
-        text-decoration: none; 
-        padding-left: 10px; 
-        display: flex; 
-        flex-wrap: wrap;} 
 
-} 
+    .tamanho {
+        font-size: 25px;
+    }
 
-/* Início - Rodapé */
+    .logo2 {
+        margin: auto;
+        margin-bottom: 55px;
+        padding-top: 0px;
+        padding-right: 0px;
+    }
 
-footer {
-    background-color: var(--branco);
-    padding-top: 60px;
+    .tam {
+        width: 160px;
+        margin-bottom: 27px;
+    }
+
+    .space {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-bottom: 45px;
+    }
+
+    .imgfooter {
+        width: 30px;
+    }
+
+    .alt {
+        width: 35px;
+    }
+
+    .p-t {
+        padding-bottom: 10px;
+    }
+
+    .p-tt {
+        padding-bottom: 10px;
+    }
+
+    /* Fim - Rodapé */
 }
 
-.p-t {
-    padding-bottom: 60px;
+@media (max-width: 376px) {
+    main {
+        justify-content: space-around;
+        height: 113vh;
+    }
 }
 
-.tam {
-    width: 80%;
-}
+@media (max-width: 321px) {
+    .input:focus {
+        width: 290px !important;
+        font-size: 13.2px;
+    }
 
-.azul {
-    background-color: var(--azul);
-    color: var(--branco);
-    padding: 10px;
-}
+    main h1 {
+        margin-left: -59px;
+    }
 
-.azul h5 {
-    font-weight: normal;
-}
+    .login-sec {
+        padding-left: 142px;
+    }
 
-.space {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    .col-sb {
+        padding-left: 83px;
+    }
 }
-
-/* Fim - Rodapé */
