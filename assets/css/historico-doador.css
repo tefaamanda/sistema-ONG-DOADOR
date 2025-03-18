@@ -200,9 +200,12 @@ h2 {
 }
 
 .form-group {
-    margin-bottom: 15px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    padding: 20px;
 }
 
 label {
@@ -313,12 +316,29 @@ footer {
     width: 35px;
 }
 
-.form-group p {
+.pt1 p {
     font-size: 14px;
     padding-left: 500px;
+    padding-top:0;
 }
-.form-group h3 {
+
+.pt2 h3 {
+    font-weight:500;
+}
+
+.pt2 h5 {
+    font-weight: normal;
+    color:#898989;
     padding-top: 5px;
+    padding-left: 8px;
+}
+.form-group .pt2 {
+    text-align: right;
+    max-width: 100%;
+    position: absolute;
+    left: 10px;
+    display:flex;
+    top: 10px;
 }
 /* Fim - Rodapé */
 
