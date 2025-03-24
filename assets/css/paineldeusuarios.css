@@ -647,7 +647,7 @@ table {
     border-radius: 50%;
 }
 .btn-save {
-    background-color: #28a745;
+    background-color: #227f38;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -655,11 +655,11 @@ table {
     cursor: pointer;
 }
 .btn-save:hover {
-    background-color: #218838;
+    background-color: #3fc75d;
 }
 
 .btn-save2 {
-    background-color: #a72828;
+    background-color: #a42929;
     color: white;
     padding: 10px 20px;
     border: none;
