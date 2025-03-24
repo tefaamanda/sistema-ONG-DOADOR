@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" dir="ltr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Usuários</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
+    <link rel="stylesheet" href="assets/css/paineldeusuarios.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        $("#formCadastroUsuario").on("submit", function(e) {
+
+            // Faz com que não atualiza a página
+            e.preventDefault();
+
+            // Captura tudo o que o usuario preencheu 
+            let dados = new FormData(this);
+
+            // Repassa os dados para OBJETO
+            let envia = {
+                imagem: dados.get("imagem"),
+                nome: dados.get("nome"),
+                e_mail: dados.get("e_mail"),
+                tipo: 3,
+                atividade: dados.get("atividade")
+            }
+
+            // Transforma o Objeto JSON em um STRING
+            envia = JSON.stringify(envia)
+
+            // Envia as informações para a API
+            $.ajax({
+                // Metodo HTTP da API
+                method: "post", 
+
+                // URL da API
+                url: "http://192.168.1.126:5000/user",
+
+                // Envia os dados do formulario
+                data: envia,
+
+                // Informa que deve ser retornado um JSON
+                contentType: "application/json",
+
+                // Metodo executado quando da certo a requisição
+                success: function(retorno) {
+                    alert("DEU CERTO!!!")
+                    console.log(retorno)
+                },
+
+                // Caso de algum erro executa essa função
+                error: function(retorno) {
+                    alert("DEU RUIM")
+                    console.log(retorno)
+                }
+            })
+        })
+    </script>
+    <script>
+        const users = {
+            1: { name: "João Silva", email: "joao@exemplo.com", type: "Administrador", active: true, image: "https://via.placeholder.com/100" },
+            2: { name: "Maria Oliveira", email: "maria@exemplo.com", type: "Usuário", active: false, image: "https://via.placeholder.com/100" }
+        };
+
+        function openModal(userId) {
+            const user = users[userId];
+            document.getElementById("profileImage").src = user.image;
+            document.getElementById("name").value = user.name;
+            document.getElementById("email").value = user.email;
+            document.getElementById("type").value = user.type;
+            document.getElementById("active").checked = user.active;
+            document.getElementById("userModal").style.display = "block";
+            document.getElementById("userModal").setAttribute("data-user-id", userId); // Guardar ID do usuário
+        }
+
+        function closeModal() {
+            document.getElementById("userModal").style.display = "none";
+        }
+
+        function saveChanges() {
+            const userId = document.getElementById("userModal").getAttribute("data-user-id");
+            const user = users[userId];
+
+            if (user) {
+                user.name = document.getElementById("name").value;
+                user.email = document.getElementById("email").value;
+                user.type = document.getElementById("type").value;
+                user.active = document.getElementById("active").checked;
+
+                alert("Alterações salvas com sucesso!");
+                closeModal();
+                updateTable(); // Atualiza a tabela após salvar
+            }
+        }
+
+        function updateTable() {
+            const tbody = document.querySelector("tbody");
+            tbody.innerHTML = ""; // Limpa a tabela antes de preencher
+
+            Object.keys(users).forEach(id => {
+                const user = users[id];
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+                    <td>${id}</td>
+                    <td>${user.name}</td>
+                    <td>${user.email}</td>
+                    <td>
+                        <button class="editBtn" onclick="openModal(${id})">
+                            <svg height="1em" viewBox="0 0 512 512">
+                              <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231z"></path>
+                            </svg>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", updateTable); // Preencher a tabela ao carregar a página
+    </script>
+    <!-- <script>
+        $(document).ready(function () {
+            window.onload = function () {
+            let token = localStorage.getItem("token");
+            let tipo = localStorage.getItem("tipo");
+
+            if (!token || tipo != 2) {
+                Swal.fire({
+                    title: "Erro",
+                    text: "Você não pode acessar essa página!",
+                    icon: "error",
+                    confirmButtonText: "OK"
+                }).then(() => {
+                    window.location.href = "login.html";
+                });
+            }
+        };
+        });
+    </script> -->
+    
+</head>
+<body>
+    <!-- início >> cabeçalho -->
+    <header class="d-flex pt-3 align-items-center justify-content-center">
+       <img class="logo1" src="assets/img/logo.png" alt="Logo da fundação 'Doe Aí'.">
+       <div class="group">
+           <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
+           <g>
+               <path
+               d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+               ></path>
+           </g>
+           </svg>
+           <input
+           id="query"
+           class="input"
+           type="search"
+           placeholder="Busque por ONGs..."
+           name="searchbar"
+           />
+       </div>
+       <nav>
+           <div>
+               <a href="" class="text-nav">
+                   PÁGINA INICIAL
+               </a>
+           </div>
+       </nav>
+   </header>
+ <main>
+    <main>
+        <h1 class="titulo">Informações de Usuários</h1>
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody> <!-- Tabela será preenchida dinamicamente -->
+            </table>
+        </div>
+    </main>
+
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Editar Usuário</h2>
+            </div>
+            <div class="modal-body">
+                <img id="profileImage" src="" alt="Imagem do Perfil">
+                <label for="name">Nome:</label>
+                <input id="name" type="text">
+                <label for="email">E-mail:</label>
+                <input id="email" type="email">
+                <label for="type">Tipo:</label>
+                <input id="type" type="number">
+                <label for="active">Ativo:</label>
+                <input id="active" type="number">
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btn" class="btn-save2">Excluir</button>
+                <button class="btn-save" onclick="saveChanges()">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+   <footer>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-3 text-center">
+                <img class="logo2 tam" src="assets/img/logo.png" alt="Logo da fundação 'Doe Aí'.">
+            </div>
+
+            <div class="col-md-2 col-6 text-center margin">
+                <h5 class="pb-2 tam2">TELEFONE</h5>
+                <h6>(18) 99120-3762</h6>
+            </div>
+
+            <div class="col-md-2 col-6 text-center margin">
+                <h5 class="pb-2 tam2">SOBRE NÓS</h5>
+                <h6>• ONGs</h6>
+                <h6 class="p-t">• Doações</h6>
+            </div>
+
+            <div class="col-md-5 text-center">
+                <h5 class="pb-2 tam2">NOS ACOMPANHE</h5>
+                <div class="space">
+                    <img class="imgfooter" src="assets/img/facebook.png" alt="Logo do Facebook.">
+                    <img class="imgfooter" src="assets/img/instagram.png" alt="Logo do Instagram.">
+                    <img class="imgfooter alt" src="assets/img/youtube.png" alt="Logo do Youtube.">
+                    <img class="imgfooter" src="assets/img/tik tok.png" alt="Logo do Tik Tok.">
+                </div>
+            </div>
+
+            <div class="col-md-12 azul text-center">
+                <h5 class="tam3">© 2025. Todos os direitos reservados.</h5>
+            </div>
+            </div>
+        </div>
+    </footer>
+<!-- end >> rodapé -->
+    </body>
+</html>
