@@ -236,7 +236,7 @@ main h1 {
 .eye-icon {
     position: absolute;
     right: 105px;
-    top: 73%;
+    top: 72.8%;
     transform: translateY(-50%);
     cursor: pointer;
     width: 45px;
@@ -339,6 +339,7 @@ footer {
         align-items: center;
         text-align: center;
         word-wrap: break-word;
+        padding-top: 550px;
     }
 
     main h1 {
@@ -351,6 +352,7 @@ footer {
     .login-sec {
         justify-content: center;
         margin-left: -40px;
+        gap: 0px;
     }
 
     .input-log1 {
@@ -359,10 +361,11 @@ footer {
 
     .input-log2 {
         max-width: 300px;
+        margin-right: 100px;
     }
 
     .label-log {
-        margin-left: -100px;
+        margin-left: -110px;
     }
 
     .envio {
@@ -374,7 +377,7 @@ footer {
     .bot-envio {
         margin-left: 150px;
         margin-right: 150px;
-        margin-bottom: 30px;
+        margin-bottom: 570px;
     }
 
     .parte-principal { 
@@ -417,6 +420,13 @@ footer {
     .col-sb {
         padding-top: 25px;
         padding-right: 13px;
+    }
+
+    .eye-icon {
+        position: relative;
+        transform: translateY(-85%);
+        right: -75px;
+        top: -1.5%;
     }
 
     /* Início - Rodapé */
@@ -465,31 +475,30 @@ footer {
         padding-bottom: 10px;
     }
 
+    .azul h5 {
+        text-align: center;
+    }
+
     /* Fim - Rodapé */
 }
 
 @media (max-width: 376px) {
-    main {
-        justify-content: space-around;
-        height: 113vh;
-    }
 }
 
 @media (max-width: 321px) {
-    .input:focus {
-        width: 290px !important;
-        font-size: 13.2px;
+    main {
+        padding-top: 650px;
     }
 
-    main h1 {
-        margin-left: -59px;
+    .bot-envio {
+        margin-bottom: 670px;
     }
 
-    .login-sec {
-        padding-left: 142px;
+    .input-log1 {
+        margin-left: -5px;
     }
 
-    .col-sb {
-        padding-left: 83px;
+    .input-log2 {
+        margin-left: -5px;
     }
 }
