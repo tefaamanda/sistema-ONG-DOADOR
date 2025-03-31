@@ -3,6 +3,7 @@
     padding: 0;
     text-decoration: none;
     transition: all 0.5s;
+    gap: 0 auto;
 }
 
 :root {
@@ -89,6 +90,10 @@ header {
     border: 2px solid var(--laranja);
 }
 
+.inicio .titulo {
+    color:white
+}
+
 .group {
     display: flex;
     line-height: 28px;
@@ -153,23 +158,23 @@ header {
 .banner {
     width: 100%;
 }
+
      /* Centraliza verticalmente */
-.btn-lar,
 .btn-pesquisar {
-         border: none;
-         cursor: pointer;
-         font-size: 15px;
-         gap: 20px;
-         text-decoration: none;
-         margin-left: 50px;
-         align-items: center;
-         font-family: 'Microsoft JhengHei UI', sans-serif;
-         color: var(--branco);
-         background-color: var(--laranja);
-         border-radius: 25px;
-         border-color: var(--laranja);
-         border: none;
-         padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            gap: 20px;
+            text-decoration: none;
+            margin-left: 50px;
+            align-items: center;
+            font-family: 'Microsoft JhengHei UI', sans-serif;
+            color: var(--branco);
+            background-color: var(--laranja);
+            border-radius: 25px;
+            border-color: var(--laranja);
+            border: none;
+            padding: 10px 20px;
 }
      
 .btn-lar:hover,
@@ -188,17 +193,17 @@ header {
     align-items: center;
     margin-left: 50px;
     margin-right: 50px;
-    margin-top: -60px;
+    margin-top: -80px;
     position: absolute;
     border-radius: 10px;
 }
 .esp-in {
     width: 100%;
     max-width: 1440px;
-    height: 400px;
+    height: 500px;
     background-color: #082C5B;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding-left: 70px;
     padding-right: 70px;
@@ -209,20 +214,52 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
 }
-.quatro img {
+.quatro3{
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+}
+
+.quatro3 h4 {
+    padding-top:25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quatro3 p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img1 {
+    max-width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover; /* Ajusta a imagem dentro do círculo sem distorção */
+    display: block;
+}
+
+.img2 {
+    max-width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover; /* Ajusta a imagem dentro do círculo sem distorção */
+    display: block;
+}
+.img3 {
     max-width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover; /* Ajusta a imagem dentro do círculo sem distorção */
     display: block;
 }
-
 .pad {
     padding-top: 55px;
 }
-.laranja {
+.laranja1 {
     background-color: var(--laranja);
     color: var(--branco);
     padding-bottom: 20px;
@@ -244,6 +281,7 @@ header {
     color: white;
     padding-left: 600px;
     padding-top:80px;
+    justify-content: center;
 }
 
 .tam-imgs {
@@ -256,8 +294,7 @@ header {
     color: var(--branco);
     font-size: 25px;
     font-family: 'Poppins', sans-serif;
-    line-height: 1.4; 
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 70px;
 }
 
@@ -283,7 +320,7 @@ header {
 }
 
 h2 {
-    padding-top: 65px;
+    padding-top: 125px;
     padding-bottom: 20px;
 }
 
@@ -294,13 +331,12 @@ h2 {
 
 .cor-fund-cinz {
     background-color: var(--cinzaclaro);
-    height: 1600px;
+    height: 2100px;
 }
 
 .esp-left {
-    padding-left: 120px !important;
+    justify-content: center;
 }
-
 #carouselExampleIndicators {
     max-width: 60%;
     margin: 0 auto;
@@ -347,23 +383,23 @@ h2 {
     height: 40px !important;
 }
 
-.laranja .carousel-control-next-icon {
+.laranja1 .carousel-control-next-icon {
     background-image: url('/assets/img/seta2.png') !important;
     width: 60px !important;
     height: 60px !important;
 }
 
-.laranja .carousel-control-prev-icon {
+.laranja1 .carousel-control-prev-icon {
     background-image: url('/assets/img/seta1.png') !important;
     width: 60px !important;
     height: 60px !important;
 }
 
-.laranja .carousel-control-next {
+.laranja1 .carousel-control-next {
     right: -5%;
 }
 
-.laranja .carousel-control-prev {
+.laranja1 .carousel-control-prev {
     left: -5%;
 }
 
@@ -438,6 +474,137 @@ footer {
 
 /* RESPONSIVO */
 
+/* Ajustes gerais para responsividade */
+@media (max-width: 768px) {
+    .banner {
+        height: 400px;
+        background-position: center;
+        background-size: cover;
+    }
+    .logo1 {
+        width: 150px;
+        margin-left: 0;
+        padding-left: 20px;
+    }
+
+    .titulo {
+        font-size: 30px;
+        padding-left: 40px;
+    }
+
+    .titulo2 {
+        font-size: 16px;
+        padding-left: 40px;
+        position: absolute;
+
+    }
+
+    .input {
+        width: 250px;
+        padding-left: 1.5rem;
+    }
+
+    .btn-pesquisar {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    .carousel-inner img {
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .esp-in {
+        flex-direction: column;
+        padding-left: 10px;
+        padding-right: 10px;
+        height: auto;
+    }
+
+    .quatro, .quatro3 {
+        margin-bottom: 20px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .quatro img {
+        max-width: 80%;
+    }
+    .quatro3{
+        display: flex;
+        flex-direction: column;
+        padding-top: 15px;
+        align-items: center;
+    }
+
+    .azulescuro {
+        flex-direction: column;
+        text-align: center;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: -80px;
+        margin-bottom: 80px;
+    }
+
+    .btn-slide {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    .carousel-control-next, .carousel-control-prev {
+        width: 35px;
+        height: 35px;
+    }
+
+    footer {
+        padding-top: 30px;
+    }
+
+    .logo2 {
+        width: 100px;
+        margin-left: 20px;
+    }
+
+    .imgfooter {
+        width: 25px;
+    }
+}
+
+/* Para telas menores que 480px (smartphones em modo retrato) */
+@media (max-width: 480px) {
+    .header-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input {
+        width: 200px;
+        margin-bottom: 10px;
+    }
+
+    .btn-pesquisar {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .carousel-inner img {
+        max-height: 250px;
+    }
+
+    .quatro img {
+        max-width: 70%;
+    }
+
+    .frasefinal {
+        font-size: 16px;
+        padding-left: 20px;
+        padding-top: 40px;
+    }
+
+    .esp-left {
+        padding-left: 10px;
+    }
+}
 @media (max-width: 426px) {
     /* Início - Cabeçalho */
 
@@ -491,68 +658,6 @@ footer {
     .btn-lar {
         margin-bottom: 30px;
     }
-
-    /* Fim - Cabeçalho */
-
-    .banner {
-        width: 100%;
-    }
-
-    .laranja {
-        padding-top: 0px;
-    }
-
-    .tam-imgs {
-        max-width: 25%;
-    }
-
-    .branco {
-        padding-bottom: 0px;
-        font-size: 20px;
-    }
-
-    .espac {
-        padding-bottom: 65px;
-    }
-
-    .titulo {
-        text-align: center;
-        padding-left: 30px;
-        padding-right: 19px;
-    }
-
-    .cor-jus {
-        padding-left: 9px;
-        padding-bottom: 0px;
-        padding-right: 10px;
-        font-size: 18px;
-    }
-
-    .img-centralizada {
-        margin-bottom: 26px;
-    }
-
-    .esp-left {
-        padding-left: 17px !important;
-    }
-
-    #carouselExampleIndicators {
-        max-width: 100%;
-    }
-
-    .btn-slide {
-        padding: 9px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        font-size: 15px;
-    }
-
-    .esp-left {
-        padding-top: 45px;
-    }
-
-    /* Início - Rodapé */
-
     footer {
         padding-top: 18px;
         margin-top: 40px;
@@ -595,27 +700,4 @@ footer {
 
     .p-tt {
         padding-bottom: 10px;
-    }
-
-    /* Fim - Rodapé */
-}
-
-@media (max-width: 376px) {
-    .titulo {
-        padding-left: 13px;
-    }
-
-    .btn-slide {
-        padding: 9px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 321px) {
-    .input:focus {
-        width: 300px !important;
-        font-size: 13.8px;
-    }
-}
+    }}
